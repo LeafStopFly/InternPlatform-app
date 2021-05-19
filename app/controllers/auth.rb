@@ -4,7 +4,7 @@ require 'roda'
 require_relative './app'
 
 module ISSInternship
-  # Web controller for ISSInternship API
+  # Web controller for Credence API
   class App < Roda
     route('auth') do |routing|
       @login_route = '/auth/login'
@@ -18,8 +18,7 @@ module ISSInternship
         routing.post do
           account = AuthenticateAccount.new(App.config).call(
             username: routing.params['username'],
-            password: routing.params['password']
-          )
+            password: routing.params['password'])
 
           session[:current_account] = account
           flash[:notice] = "Welcome back #{account['username']}!"
