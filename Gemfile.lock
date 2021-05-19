@@ -81,6 +81,7 @@ GEM
     unicode-display_width (2.0.0)
 
 PLATFORMS
+  universal-darwin-20
   x86_64-linux
 
 DEPENDENCIES
@@ -98,4 +99,4 @@ DEPENDENCIES
   slim
 
 BUNDLED WITH
-   2.2.14
+   2.2.15
