@@ -4,7 +4,7 @@ require 'roda'
 require 'slim'
 
 module ISSInternship
-  # Base class for ISSInternship Web Application
+  # Base class for Credence Web Application
   class App < Roda
     plugin :render, engine: 'slim', views: 'app/presentation/views'
     plugin :assets, css: 'style.css', path: 'app/presentation/assets'
