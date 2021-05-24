@@ -17,7 +17,7 @@ module ISSInternship
 
       raise(UnauthorizedError) unless response.code == 200
 
-      response.parse['attributes']
+      JSON.parse(response)["attributes"]
     end
   end
 end
