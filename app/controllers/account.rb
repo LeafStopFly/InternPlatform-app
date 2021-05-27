@@ -4,7 +4,7 @@ require 'roda'
 require_relative './app'
 
 module ISSInternship
-  # Web controller for Credence API
+  # Web controller for ISSInternship API
   class App < Roda
     route('account') do |routing|
       routing.on do
