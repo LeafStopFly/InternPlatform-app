@@ -7,6 +7,8 @@ module ISSInternship
   class AuthenticateAccount
     class UnauthorizedError < StandardError; end
 
+    class ApiServerError < StandardError; end
+
     def initialize(config)
       @config = config
     end
@@ -15,9 +17,10 @@ module ISSInternship
       response = HTTP.post("#{@config.API_URL}/auth/authenticate",
                            json: { username: username, password: password })
 
-      raise(UnauthorizedError) unless response.code == 200
+      raise(UnauthorizedError) if response.code == 403
+      raise(ApiServerError) if response.code != 200
 
-      JSON.parse(response)["attributes"]
+      JSON.parse(response)['attributes']
     end
   end
 end
