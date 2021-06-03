@@ -1,0 +1,16 @@
+div class="row" style="vertical-align: bottom;"
+  div class="col-xs-9"
+    h3 All Companies
+  div class="col-xs-3"
+table class="table"
+  thead
+    tr
+      th Company name
+      th Repo URL
+  tbody
+    - companies.all.each do |comp|
+      tr
+        td 
+          a href="/account/companies/#{comp.id}" #{comp.name}
+          td 
+            a href="#{comp.repo_url}" #{comp.repo_url}
