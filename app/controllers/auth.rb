@@ -18,7 +18,7 @@ module ISSInternship
         routing.post do
           account_info = AuthenticateAccount.new(App.config).call(
             username: routing.params["username"],
-            password: routing.params["password"],
+            password: routing.params["password"]
           )
 
           current_account = CurrentAccount.new(

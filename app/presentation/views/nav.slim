@@ -8,9 +8,11 @@
         li class="nav-item mx-0 mx-lg-1"
           a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/register_confirm' ABOUT
 
+
+
         - if @current_account.logged_in?
           li class="nav-item mx-0 mx-lg-1"
-            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/" Company
+            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/" COMPANY
           li class="nav-item dropdown"
             a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
               = "#{@current_account.username}"
