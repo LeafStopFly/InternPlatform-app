@@ -6,11 +6,14 @@ table class="table"
   thead
     tr
       th Company name
-      th Repo URL
+      th 統一編號
+      th address
   tbody
     - companies.all.each do |comp|
       tr
         td 
-          a href="/account/companies/#{comp.id}" #{comp.name}
-          td 
-            a href="#{comp.repo_url}" #{comp.repo_url}
+          a href="companies/#{comp.id}" #{comp.name}
+        td 
+          p #{comp.company_no}
+        td
+          p #{comp.address}

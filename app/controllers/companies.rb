@@ -14,9 +14,7 @@ module ISSInternship
 
           # GET /companies/[comp_id]
           routing.get do
-            comp_info = GetCompany.new(App.config).call(
-              @current_account, comp_id
-            )
+            comp_info = GetCompany.new(App.config).call(comp_id)
             company = Company.new(comp_info)
 
             view :company, locals: {
@@ -31,7 +29,7 @@ module ISSInternship
 
         # GET /companies/
         routing.get do
-          company_list = GetAllCompanies.new(App.config).call(@current_account)
+          company_list = GetAllCompanies.new(App.config).call
 
           companies = Companies.new(company_list)
 
