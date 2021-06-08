@@ -28,6 +28,30 @@ module ISSInternship
             flash[:error] = 'Interview not found'
             routing.redirect @interviews_route
           end
+
+          # POST /interviews/[interv_id]
+          routing.post do
+            action = routing.params['action']
+
+            task_list = {
+              'edit' => { service: EditInterview,
+                         message: 'Edited the interview.' },
+              'delete' => { service: DeleteInterview,
+                            message: 'Deleted the interview.' }
+            }
+
+            task = task_list[action]
+            task[:service].new(App.config).call(
+              current_account: @current_account,
+              intern_id: intern_id
+            )
+            flash[:notice] = task[:message]
+
+          rescue StandardError
+            flash[:error] = 'Could not find collaborator'
+          ensure
+            routing.redirect @interviews_route
+          end
         end
 
         # GET /interviews/
