@@ -5,13 +5,47 @@ require_relative 'interview'
 module ISSInternship
   # Behaviors of the currently logged in account
   class Interview
-    attr_reader :id, :position, :rating, :iss_module
+    attr_reader :id, :position, :rating, :iss_module, # basic info
+                :time, :interview_location, :level, :recruit_source, :result,
+                :description, :waiting_result_time, :advice # full details
 
     def initialize(interv_info)
-      @id = interv_info['attributes']['id']
-      @position = interv_info['attributes']['position']
-      @rating = interv_info['attributes']['rating']
-      @iss_module = interv_info['attributes']['iss_module']
+      process_attributes(interv_info['attributes'])
+      # process_relationships(interv_info['relationships'])
+      process_policies(interv_info['policies'])
     end
+
+    private
+
+    def process_attributes(attributes)
+      @id = attributes['id']
+      @position = attributes['position']
+      @rating = attributes['rating']
+      @iss_module = attributes['iss_module']
+    end
+
+    # def process_relationships(relationships)
+    #   return unless relationships
+
+    #   @owner = Account.new(relationships['owner'])
+    #   @collaborators = process_collaborators(relationships['collaborators'])
+    #   @documents = process_documents(relationships['documents'])
+    # end
+
+    def process_policies(policies)
+      @policies = OpenStruct.new(policies)
+    end
+
+    # def process_documents(documents_info)
+    #   return nil unless documents_info
+
+    #   documents_info.map { |doc_info| Document.new(doc_info) }
+    # end
+
+    # def process_collaborators(collaborators)
+    #   return nil unless collaborators
+
+    #   collaborators.map { |account_info| Account.new(account_info) }
+    # end
   end
 end

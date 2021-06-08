@@ -1,27 +1,25 @@
 # frozen_string_literal: true
 
-require_relative 'internship'
+require_relative 'company'
 
 module ISSInternship
   # Behaviors of the currently logged in account
-  class Internship
-    attr_reader :id, :title, :position, :rating, :iss_module, # basic info
-                :year, :period, :job_description, :salary, :reactionary, :recruit_source # full details
+  class Company
+    attr_reader :id, :company_no, :name, :address # basic info
 
-    def initialize(intern_info)
-      process_attributes(intern_info['attributes'])
-      # process_relationships(intern_info['relationships'])
-      process_policies(intern_info['policies'])
+    def initialize(comp_info)
+      process_attributes(comp_info['attributes'])
+      # process_relationships(comp_info['relationships'])
+      process_policies(comp_info['policies'])
     end
 
     private
 
     def process_attributes(attributes)
       @id = attributes['id']
-      @title = attributes['title']
-      @position = attributes['position']
-      @rating = attributes['rating']
-      @iss_module = attributes['iss_module']
+      @company_no = attributes['company_no']
+      @name = attributes['name']
+      @address = attributes['address']
     end
 
     # def process_relationships(relationships)

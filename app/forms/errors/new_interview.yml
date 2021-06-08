@@ -1,0 +1,5 @@
+en:
+  errors:
+    position: 'provide a position name'
+    rating: 'provide a rating to interview experience'
+    iss_module: 'provide an iss module which you choose'

@@ -1,0 +1,6 @@
+en:
+  errors:
+    title: 'provide title with up to 255 legal characters'
+    position: 'provide a position name'
+    rating: 'provide a rating to internship experience'
+    iss_module: 'provide an iss module which you choose'
