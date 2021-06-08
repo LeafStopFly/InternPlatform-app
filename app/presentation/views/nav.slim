@@ -1,3 +1,10 @@
+link rel="stylesheet" href="../css/styles.css"
+/ !-- Core theme JS-->
+script src="../js/scripts.js"
+
+/ !-- Fonts CSS-->
+link href="../css/heading.css" rel="stylesheet"
+link href="../css/body.css" rel="stylesheet"
 <nav class="navbar navbar-expand-lg bg-secondary" id="mainNav">
   <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">ISS INTERNSHIP</a>
     <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
@@ -6,13 +13,13 @@
         li class="nav-item mx-0 mx-lg-1"
           a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='#portfolio' INTERNSHIP SHARING
         li class="nav-item mx-0 mx-lg-1"
-          a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/register_confirm' ABOUT
-
-
+          a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='#about' INTERVIEW SHARING
+        /li class="nav-item mx-0 mx-lg-1"
+          a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='#about' ABOUT
 
         - if @current_account.logged_in?
           li class="nav-item mx-0 mx-lg-1"
-            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/" COMPANY
+            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/" YOUR POST
           li class="nav-item dropdown"
             a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
               = "#{@current_account.username}"
@@ -21,9 +28,16 @@
               a class="dropdown-item" href="/account/#{@current_account.username}" ACCOUNT
               a class="dropdown-item" href='/auth/logout' LOGOUT 
         - else
-          li class="nav-item mx-0 mx-lg-1"
+          li class="nav-item dropdown"
+            a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              = "ACCOUNT"
+
+            div class=-"dropdown-menu"
+              a class="dropdown-item" href="/auth/login" LOGIN
+              a class="dropdown-item" href='/auth/register' REGISTER 
+          /li class="nav-item mx-0 mx-lg-1"
             a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/login' LOGIN
-          li class="nav-item mx-0 mx-lg-1"
+          /li class="nav-item mx-0 mx-lg-1"
             a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/register' REGISTER
     </div>
   </div>

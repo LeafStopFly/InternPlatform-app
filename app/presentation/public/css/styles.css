@@ -1785,7 +1785,7 @@
     pointer-events: none; }
   
   .btn-primary {
-    color: #212529;
+    color: white !important;
     background-color: #ffc4bf;
     border-color: #ffc4bf; }
     .btn-primary:hover {
