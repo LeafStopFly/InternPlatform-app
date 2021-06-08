@@ -10,8 +10,17 @@ module ISSInternship
 
       params do
         required(:position).filled(:string)
-        required(:rating).filled(:string)
+        required(:rating).filled(:float)
         required(:iss_module).maybe(:string)
+        required(:time).filled(:string)
+        required(:interview_location).filled(:float)
+        required(:level).filled(:string)
+        required(:recruit_source).maybe(:string)
+        required(:result).filled(:string)
+        required(:description).filled(:string)
+        required(:waiting_result_time).maybe(:string)
+        required(:advice).maybe(:string)
+        required(:company_name).maybe(:string)
       end
     end
   end

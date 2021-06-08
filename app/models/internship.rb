@@ -6,7 +6,8 @@ module ISSInternship
   # Behaviors of the currently logged in account
   class Internship
     attr_reader :id, :title, :position, :rating, :iss_module, # basic info
-                :year, :period, :job_description, :salary, :reactionary, :recruit_source # full details
+                :year, :period, :job_description, :salary, :reactionary, :recruit_source,
+                :company_name, :non_anonymous # full details
 
     def initialize(intern_info)
       process_attributes(intern_info['attributes'])
@@ -22,6 +23,13 @@ module ISSInternship
       @position = attributes['position']
       @rating = attributes['rating']
       @iss_module = attributes['iss_module']
+      @year = attributes['year']
+      @period = attributes['period']
+      @job_description = attributes['job_description']
+      @salary = attributes['salary']
+      @reactionary = attributes['reactionary']
+      @recruit_source = attributes['recruit_source']
+      @company_name = attributes['company_name']
     end
 
     # def process_relationships(relationships)
