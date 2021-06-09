@@ -35,7 +35,7 @@ module ISSInternship
 
             task_list = {
               'edit' => { service: EditInterview,
-                         message: 'Edited the interview.' },
+                          message: 'Edited the interview.' },
               'delete' => { service: DeleteInterview,
                             message: 'Deleted the interview.' }
             }
@@ -48,7 +48,7 @@ module ISSInternship
             flash[:notice] = task[:message]
 
           rescue StandardError
-            flash[:error] = 'Could not find collaborator'
+            flash[:error] = 'Could not update interview post'
           ensure
             routing.redirect @interviews_route
           end

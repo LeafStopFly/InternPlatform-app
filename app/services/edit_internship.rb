@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-# Service to add collaborator to project
+# Service to edit Internship post
 class EditInternship
   class InternshipNotEdited < StandardError; end
+
   def initialize(config)
     @config = config
   end
@@ -13,7 +14,7 @@ class EditInternship
 
   def call(current_account:, intern_id:)
     response = HTTP.auth("Bearer #{current_account.auth_token}")
-                    .put("#{api_url}/internships/#{intern_id}")
+                   .put("#{api_url}/internships/#{intern_id}")
 
     raise InternshipNotEdited unless response.code == 200
   end

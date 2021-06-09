@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# Service to add collaborator to project
+# Service to delete Internview post
 class DeleteInterview
   class InterviewNotDeleted < StandardError; end
-  
+
   def initialize(config)
     @config = config
   end
@@ -14,7 +14,7 @@ class DeleteInterview
 
   def call(current_account:, interv_id:)
     response = HTTP.auth("Bearer #{current_account.auth_token}")
-                    .delete("#{api_url}/interviews/#{interv_id}")
+                   .delete("#{api_url}/interviews/#{interv_id}")
 
     raise InterviewNotDeleted unless response.code == 200
   end

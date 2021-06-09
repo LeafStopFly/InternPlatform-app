@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Service to add collaborator to project
+# Service to edit Interview post
 class EditInterview
   class InterviewNotEdited < StandardError; end
 
@@ -14,7 +14,7 @@ class EditInterview
 
   def call(current_account:, interv_id:)
     response = HTTP.auth("Bearer #{current_account.auth_token}")
-                    .put("#{api_url}/interviews/#{interv_id}")
+                   .put("#{api_url}/interviews/#{interv_id}")
 
     raise InterviewNotEdited unless response.code == 200
   end

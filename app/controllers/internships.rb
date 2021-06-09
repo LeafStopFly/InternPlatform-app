@@ -35,7 +35,7 @@ module ISSInternship
 
             task_list = {
               'edit' => { service: EditInternship,
-                         message: 'Edited the internship.' },
+                          message: 'Edited the internship.' },
               'delete' => { service: DeleteInternship,
                             message: 'Deleted the internship.' }
             }
@@ -48,7 +48,7 @@ module ISSInternship
             flash[:notice] = task[:message]
 
           rescue StandardError
-            flash[:error] = 'Could not find collaborator'
+            flash[:error] = 'Could not update internship post'
           ensure
             routing.redirect @internships_route
           end
