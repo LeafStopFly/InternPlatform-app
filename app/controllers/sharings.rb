@@ -7,7 +7,7 @@ module ISSInternship
   class App < Roda
     route('share') do |routing|
 
-      # GET share/internship
+      # GET /share/internship
       routing.get('internship') do
         company_list = GetAllCompanies.new(App.config).call
 
@@ -18,7 +18,7 @@ module ISSInternship
         }
       end
 
-      # GET share/interview
+      # GET /share/interview
       routing.get('interview') do
         company_list = GetAllCompanies.new(App.config).call
 
