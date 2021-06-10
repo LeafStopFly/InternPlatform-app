@@ -1,0 +1,76 @@
+
+
+.select-box {
+  
+  cursor: pointer;
+  position : relative;
+  max-width:  120em;
+  margin: 2em auto;
+  width: 100%;
+  margin: 2em auto;
+
+}
+
+.select,
+.label {
+  letter-spacing: 3px;
+
+  color: white;
+  display: block;
+  text-align: center;
+  font-family: 'SB Body';
+  font-size: 22px;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.select {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 5px 0;
+  height: 40px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  background: none transparent;
+  border: 0 none;
+}
+.select-box1 {
+  background: #7ebcff;
+  text-align: center;
+}
+
+.select-box2 {
+  background: #7ebcff;
+  text-align: center;
+}
+
+.select-box3 {
+  background: #7ebcff;
+  text-align: center;
+}
+
+.select-box {
+  background: #7ebcff;
+  text-align: center;
+}
+
+.label {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.open .label::after {
+   content: "▲";
+}
+.label::after {
+  content: "▼";
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px 15px;
+  border-left: 5px solid #fff;
+}
+
+

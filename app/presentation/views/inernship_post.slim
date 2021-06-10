@@ -1,0 +1,181 @@
+/ !-- Core theme JS & CSS-->
+script src="../js/scripts.js"
+link rel="stylesheet" href="../css/styles.css"
+
+/ !-- Fonts & ICON CSS-->
+link href="../css/heading.css" rel="stylesheet"
+link href="../css/body.css" rel="stylesheet"
+script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
+
+/ !-- Post JS-->
+script src="../js/post.js"
+script src="../js/post_v.js"
+
+/ !-- RATINGSTAR JS-->
+link href="../css/ratingstar.css" rel="stylesheet"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <symbol id="star" viewBox="0 0 26 28">
+    <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+  </symbol>
+</svg>
+
+/ !-- SELECTBOX -->
+link href="../css/select.box.css" rel="stylesheet"
+script src="../js/select.box.js"
+
+
+section class="page-section" id="contact"
+  div class="container"
+      h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" USERNAME
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                  <div class="sentMessage">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label>title</label>
+                          <input class="form-control" id="name" type="text" placeholder="title" required="required" data-validation-required-message="Please enter the title." />
+                          /<p class="help-block text-danger"></p>
+                      </div>
+                  </div>
+                  / <div class="control-group">
+                  /     <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  /         <label>Email position</label>
+                  /         <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                  /         <p class="help-block text-danger"></p>
+                  /     </div>
+                  / </div>
+                  
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label>Company</label>
+                          <input class="form-control" id="phone" type="tel" placeholder="Company" required="required" data-validation-required-message="Please enter your intern company." />
+                          /<p class="help-block text-danger"></p>
+                      </div>
+                  </div>
+                  /iss_module
+                  <div class="select-box">
+                    <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your module</span> </label>
+                    <select id="select-box1" class="select">
+                      <option value="Choice 1">Information Systems (IS)</option>
+                      <option value="Choice 2">Service Marketing and Management</option>
+                      <option value="Choice 3">Service Innovation and Design</option>
+                      <option value="Choice 4">Business Analytics</option>
+                    </select>
+                  </div>
+
+                  /period
+                  <div class="select-box">
+                    <label for="select-box2" class="label select-box2"><span class="label-desc">Internship Period</span> </label>
+                    <select id="select-box2" class="select">
+                      <option value="Choice 1">Summer Internship</option>
+                      <option value="Choice 2">Winter internship</option>
+                      <option value="Choice 3">Internship during semester</option>
+                      <option value="Choice 4">Half year internship</option>
+                      <option value="Choice 4">One year internship</option>
+                    </select>
+                  </div>
+
+                  /recruit_source
+                  <div class="select-box">
+                    <label for="select-box3" class="label select-box3"><span class="label-desc">Recruit Source</span> </label>
+                    <select id="select-box3" class="select">
+                      <option value="Choice 1">Information Systems (IS)</option>
+                      <option value="Choice 2">Service Marketing and Management</option>
+                      <option value="Choice 3">Service Innovation and Design</option>
+                      <option value="Choice 4">Business Analytics</option>
+                    </select>
+                  </div>
+
+                  /salary
+                  <div class="select-box">
+                    <label for="select-box4" class="label select-box4"><span class="label-desc">Salary</span> </label>
+                    <select id="select-box4" class="select">
+                      <option value="Choice 1">NO PAY</option>
+                      <option value="Choice 2">NTD 1- NTD 20,000</option>
+                      <option value="Choice 3">NTD 20,001- NTD 25,000</option>
+                      <option value="Choice 4">NTD 25,001- NTD 30,000</option>
+                      <option value="Choice 5">NTD 30,001- NTD 35,000</option>
+                      <option value="Choice 6">NTD 35,001- NTD 40,000</option>
+                      <option value="Choice 7">NTD 40,001- NTD 45,000</option>
+                      <option value="Choice 8">NTD 45,001- NTD 50,000</option>
+                      <option value="Choice 9">NTD 50,001 UP</option>
+                    </select>
+                  </div>
+
+                  /job_description
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label>Job Description</label>
+                          <textarea class="form-control" id="message" rows="5" placeholder="Job Description" required="required" data-validation-required-message="Please enter job description."></textarea>
+                          /<p class="help-block text-danger"></p>
+                      </div>
+                  </div>
+
+                  /reactionary
+                  <div class="control-group">
+                      <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                          <label>Reactionary</label>
+                          <textarea class="form-control" id="message" rows="5" placeholder="Reactionary" required="required" data-validation-required-message="Please enter the reactionary."></textarea>
+                          /<p class="help-block text-danger"></p>
+                      </div>
+                  </div>
+
+                  /rating star
+                  <div class="page__demo">
+                    <div class="page__group">
+                      <div class="rating">
+                        <input type="radio" name="rating-star" class="frating__control screen-reader" id="rc1">
+                        <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc2">
+                        <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc3">
+                        <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc4">
+                        <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc5">
+                        <label for="rc1" class="rating__item">
+                          <svg class="rating__star">
+                            <use xlink:href="#star"></use>
+                          </svg>
+                          <span class="screen-reader">1</span>
+                        </label>
+                        <label for="rc2" class="rating__item">
+                          <svg class="rating__star">
+                            <use xlink:href="#star"></use>
+                          </svg>
+                          <span class="screen-reader">2</span>
+                        </label>
+                        <label for="rc3" class="rating__item">
+                          <svg class="rating__star">
+                            <use xlink:href="#star"></use>
+                          </svg>
+                          <span class="screen-reader">3</span>
+                        </label>
+                        <label for="rc4" class="rating__item">
+                          <svg class="rating__star">
+                            <use xlink:href="#star"></use>
+                          </svg>
+                          <span class="screen-reader">4</span>
+                        </label>
+                        <label for="rc5" class="rating__item">
+                          <svg class="rating__star">
+                            <use xlink:href="#star"></use>
+                          </svg>
+                          <span class="screen-reader">5</span>
+                        </label>	
+                      </div>
+                      <span class="page__hint">Rating</span>
+                    </div>
+                  </div>
+                  <br />
+                  
+                  <div id="success"></div>
+                  button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
+              </form>
+          </div>
+      </div>
+  </div>
+  
