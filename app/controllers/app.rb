@@ -23,7 +23,15 @@ module ISSInternship
 
       # GET /
       routing.root do
-        view 'home', locals: { current_account: @current_account }
+        internship_list = GetAllInternships.new(App.config).call(@current_account)
+        internships = Internships.new(internship_list)
+
+        interview_list = GetAllInterviews.new(App.config).call(@current_account)
+        interviews = Interviews.new(interview_list)
+        
+        view 'home', locals: {
+          current_account: @current_account, interviews: interviews, internships: internships
+        }
       end
     end
   end

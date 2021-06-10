@@ -56,7 +56,7 @@ module ISSInternship
 
         # GET /interviews/
         routing.get do
-          interview_list = GetAllInterviews.new(App.config).call(@current_account)
+          interview_list = GetOwnInterviews.new(App.config).call(@current_account)
 
           interviews = Interviews.new(interview_list)
 
