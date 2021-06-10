@@ -10,8 +10,7 @@ class GetAllCompanies
 
   def call
     response = HTTP.get("#{@config.API_URL}/companies")
-    # response = HTTP.auth("Bearer #{current_account.auth_token}")
-    #                .get("#{@config.API_URL}/companies")
+
     response.code == 200 ? JSON.parse(response.to_s)['data'] : nil
   end
 end
