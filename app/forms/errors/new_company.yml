@@ -1,0 +1,5 @@
+en:
+  errors:
+    company_no: 'provide uniform company number with 8 numbers'
+    name: 'provide a company name'
+    address: 'provide an address of company'

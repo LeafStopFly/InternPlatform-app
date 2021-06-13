@@ -1,0 +1,93 @@
+# frozen_string_literal: true
+
+require 'roda'
+
+module ISSInternship
+  # Web controller for ISSInternship API
+  class App < Roda
+    route('internships') do |routing|
+      routing.on do
+        routing.redirect '/auth/login' unless @current_account.logged_in?
+        @internships_route = '/internships'
+
+        routing.on(String) do |intern_id|
+          @internship_route = "#{@internships_route}/#{intern_id}"
+
+          # GET /internships/[intern_id]
+          routing.get do
+            intern_info = GetInternship.new(App.config).call(
+              @current_account, intern_id
+            )
+            internship = Internship.new(intern_info)
+
+            view :internship, locals: {
+              current_account: @current_account, internship: internship
+            }
+          rescue StandardError => e
+            puts "#{e.inspect}\n#{e.backtrace}"
+            flash[:error] = 'Internship not found'
+            routing.redirect @internships_route
+          end
+
+          # POST /internships/[intern_id]
+          routing.post do
+            action = routing.params['action']
+
+            task_list = {
+              'edit' => { service: EditInternship,
+                          message: 'Edited the internship.' },
+              'delete' => { service: DeleteInternship,
+                            message: 'Deleted the internship.' }
+            }
+
+            task = task_list[action]
+            task[:service].new(App.config).call(
+              current_account: @current_account,
+              intern_id: intern_id
+            )
+            flash[:notice] = task[:message]
+
+          rescue StandardError
+            flash[:error] = 'Could not update internship post'
+          ensure
+            routing.redirect @internships_route
+          end
+        end
+
+        # GET /internships/
+        routing.get do
+          internship_list = GetOwnInternships.new(App.config).call(@current_account)
+
+          internships = Internships.new(internship_list)
+
+          view :internship_sharing, locals: {
+            current_user: @current_account, internships: internships
+          }
+        end
+
+        # POST /internships/
+        routing.post do
+          routing.redirect '/auth/login' unless @current_account.logged_in?
+          puts "INTERN: #{routing.params}"
+          internship_data = Form::NewInternship.new.call(routing.params)
+          if internship_data.failure?
+            flash[:error] = Form.message_values(internship_data)
+            routing.halt
+          end
+
+          CreateNewInternship.new(App.config).call(
+            current_account: @current_account,
+            internship_data: internship_data.to_h
+          )
+
+          # flash[:notice] = 'Add documents and collaborators to your new project'
+        rescue StandardError => e
+          puts "FAILURE Creating Internship: #{e.inspect}"
+          flash[:error] = 'Could not create internship'
+        ensure
+          routing.redirect @internships_route
+        end
+      end
+    end
+  end
+end

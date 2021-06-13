@@ -1,0 +1,13 @@
+en:
+  errors:
+    title: 'provide title with up to 255 legal characters'
+    position: 'provide a position name'
+    rating: 'provide a rating to internship experience'
+    iss_module: 'provide an iss module which you choose'
+    year: 'provide year of internship'
+    period: 'provide the period of internship'
+    job_description: 'provide job description'
+    salary: 'provide salary by hour or by month'
+    reactionary: 'provide internship reactionary'
+    recruit_source: 'provide recruit source of internship'
+    company_name: 'provide a company name'

@@ -5,14 +5,55 @@ require_relative 'internship'
 module ISSInternship
   # Behaviors of the currently logged in account
   class Internship
-    attr_reader :id, :title, :position, :rating, :iss_module
+    attr_reader :id, :title, :position, :rating, :iss_module, # basic info
+                :year, :period, :job_description, :salary, :reactionary, :recruit_source,
+                :company_name, :non_anonymous # full details
 
     def initialize(intern_info)
-      @id = intern_info['attributes']['id']
-      @title = intern_info['attributes']['title']
-      @position = intern_info['attributes']['position']
-      @rating = intern_info['attributes']['rating']
-      @iss_module = intern_info['attributes']['iss_module']
+      process_attributes(intern_info['attributes'])
+      # process_relationships(intern_info['relationships'])
+      process_policies(intern_info['policies'])
     end
+
+    private
+
+    def process_attributes(attributes)
+      @id = attributes['id']
+      @title = attributes['title']
+      @position = attributes['position']
+      @rating = attributes['rating']
+      @iss_module = attributes['iss_module']
+      @year = attributes['year']
+      @period = attributes['period']
+      @job_description = attributes['job_description']
+      @salary = attributes['salary']
+      @reactionary = attributes['reactionary']
+      @recruit_source = attributes['recruit_source']
+      @company_name = attributes['company_name']
+    end
+
+    # def process_relationships(relationships)
+    #   return unless relationships
+
+    #   @owner = Account.new(relationships['owner'])
+    #   @collaborators = process_collaborators(relationships['collaborators'])
+    #   @documents = process_documents(relationships['documents'])
+    # end
+
+    def process_policies(policies)
+      @policies = OpenStruct.new(policies)
+    end
+
+    # def process_documents(documents_info)
+    #   return nil unless documents_info
+
+    #   documents_info.map { |doc_info| Document.new(doc_info) }
+    # end
+
+    # def process_collaborators(collaborators)
+    #   return nil unless collaborators
+
+    #   collaborators.map { |account_info| Account.new(account_info) }
+    # end
   end
 end

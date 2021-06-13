@@ -1,0 +1,14 @@
+en:
+  errors:
+    position: 'provide a position name'
+    rating: 'provide a rating to interview experience'
+    iss_module: 'provide an iss module which you choose'
+    time: 'provide interview time'
+    interview_location: 'provide location of interview'
+    level: 'provide level of interview'
+    recruit_source: 'provide recruit source of interview'
+    result: 'provide a result of interview'
+    description: 'provide a description of interview'
+    waiting_result_time: 'provide the time you waiting result'
+    advice: 'provide interview advices'
+    company_name: 'provide a company name'
