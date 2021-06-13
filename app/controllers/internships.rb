@@ -60,7 +60,7 @@ module ISSInternship
 
           internships = Internships.new(internship_list)
 
-          view :internships_all, locals: {
+          view :internship_sharing, locals: {
             current_user: @current_account, internships: internships
           }
         end

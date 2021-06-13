@@ -6,9 +6,7 @@ module ISSInternship
   # Web controller for ISSInternship API
   class App < Roda
     route('mypost') do |routing|
-
       routing.on 'internships' do
-        
         routing.on(String) do |intern_id|
           # GET /mypost/internships/[intern_id]
           routing.get do
@@ -29,7 +27,6 @@ module ISSInternship
       end
 
       routing.on 'interviews' do
-        
         routing.on(String) do |interv_id|
           # GET /mypost/interviews/[interv_id]
           routing.get do
@@ -58,7 +55,7 @@ module ISSInternship
         interviews = Interviews.new(interview_list)
 
         view :mypost, locals: {
-        current_user: @current_account, interviews: interviews, internships: internships
+          current_user: @current_account, interviews: interviews, internships: internships
         }
       end
     end

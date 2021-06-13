@@ -60,7 +60,7 @@ module ISSInternship
 
           interviews = Interviews.new(interview_list)
 
-          view :interviews_all, locals: {
+          view :interview_sharing, locals: {
             current_user: @current_account, interviews: interviews
           }
         end

@@ -19,8 +19,8 @@
             = "BLOG"
 
           div class=-"dropdown-menu"
-            a class="dropdown-item" href="/auth/login" INTERNSHIP SHARING
-            a class="dropdown-item" href='/auth/register' INTERVIEW SHARING
+            a class="dropdown-item" href="/internships/" INTERNSHIP SHARING
+            a class="dropdown-item" href='/interviews/' INTERVIEW SHARING
         / li class="nav-item mx-0 mx-lg-1"
         /   a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/login' INTERNSHIP
         / li class="nav-item mx-0 mx-lg-1"
@@ -39,7 +39,14 @@
           
 
           li class="nav-item mx-0 mx-lg-1"
-            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/" MY POST
+            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/mypost/" MY POST
+
+          li class="nav-item dropdown"
+            a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" SHARING
+            div class=-"dropdown-menu"
+              a class="dropdown-item" href="/share/internship" SHARE INTERNSHIP
+              a class="dropdown-item" href='/share/interview'SHARE INTERVIEW
+
           li class="nav-item dropdown"
             a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
               = "#{@current_account.username}"

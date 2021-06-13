@@ -57,41 +57,20 @@ link href="../css/posts.css" rel="stylesheet"
 </div>
 </section>
 
-
-
-<section class="u-clearfix u-section-1" id="sec-1a5a">
-  <div class="u-clearfix u-sheet u-sheet-1">
-    <div class="u-expanded-width u-layout-grid u-list u-list-1">
-      <div class="u-repeater u-repeater-1">
-        <div class="u-border-3 u-border-custom-color-1 u-container-style u-list-item u-repeater-item u-list-item-1">
-          <div class="u-container-layout u-similar-container u-container-layout-1">
-            <h3 class="u-align-left u-text u-text-custom-color-1 u-text-1">POST TITLE</h3>
-            <div class="u-align-center u-blog-control u-metadata u-metadata-1">
-              <span class="u-meta-author u-meta-icon">User</span>
-              <span class="u-meta-date u-meta-icon">Fri Jun 11 2021</span>
-            </div>
-            <div class="u-border-7 u-border-custom-color-1 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-            <p class="u-align-justify-md u-align-justify-sm u-align-justify-xs u-text u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-            <a href="" class="u-align-center u-border-1 u-border-black u-border-hover-custom-color-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-custom-color-1 u-btn-1">learn more</a>
-          </div>
-        </div>
-        <div class="u-border-3 u-border-custom-color-1 u-container-style u-list-item u-repeater-item u-list-item-2">
-          <div class="u-container-layout u-similar-container u-container-layout-2">
-            <h3 class="u-align-left u-text u-text-custom-color-1 u-text-3">POST TITLE</h3>
-            <div class="u-align-center u-blog-control u-metadata u-metadata-2">
-              <span class="u-meta-author u-meta-icon">User</span>
-              <span class="u-meta-date u-meta-icon">Fri Jun 11 2021</span>
-            </div>
-            <div class="u-border-7 u-border-custom-color-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-            <p class="u-align-justify-md u-align-justify-sm u-align-justify-xs u-text u-text-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-            <a href="" class="u-align-center u-border-1 u-border-black u-border-hover-custom-color-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-custom-color-1 u-btn-2">learn more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+section#sec-1a5a.u-clearfix.u-section-1
+  - internships.all.each do |intern|
+    .u-clearfix.u-sheet.u-sheet-1
+      .u-expanded-width.u-layout-grid.u-list.u-list-1
+        .u-repeater.u-repeater-1
+          .u-border-3.u-border-custom-color-1.u-container-style.u-list-item.u-repeater-item.u-list-item-1
+            .u-container-layout.u-similar-container.u-container-layout-1
+              h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{intern.title} 
+              .u-align-center.u-blog-control.u-metadata.u-metadata-1
+                span.u-meta-author.u-meta-icon User
+                span.u-meta-date.u-meta-icon Fri Jun 11 2021
+              .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
+              p.u-align-justify-md.u-align-justify-sm.u-align-justify-xs.u-text.u-text-2 #{intern.reactionary}
+              a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="/#{intern.id}"  learn more
 
 br
 <section class="copyright py-4 text-center text-white">
