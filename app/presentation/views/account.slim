@@ -1,13 +1,21 @@
 br
-h1 class="page-section-heading text-secondary mb-0 d-inline-block" Account Details
-br
-br
-div class="container"
+<section >
+div class="col-sm-4"
+  div class="col-sm-4"
+
+  div class="row" style="vertical-align: bottom;"
+    div class="page-section-heading text-secondary mb-0 d-inline-block"
+      h3 Account Details
+
+
+  div class="container"
   div class="row"
     h5 class="page-section-heading text-secondary mb-0 d-inline-block" Username:
-    h5 class="col-sm-10"
-      == current_account.username
+    h5 class="col-sm-10" == current_account.username
   div class="row"
     h5 class="page-section-heading text-secondary mb-0 d-inline-block" Email:
     h5 class="col-sm-10"
       == current_account.email
+
+
+

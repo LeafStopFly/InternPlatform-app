@@ -1,10 +1,8 @@
-
-
 .select-box {
-  
+
   cursor: pointer;
-  position : relative;
-  max-width:  120em;
+  position: relative;
+  max-width: 120em;
   margin: 2em auto;
   width: 100%;
   margin: 2em auto;
@@ -14,7 +12,6 @@
 .select,
 .label {
   letter-spacing: 3px;
-
   color: white;
   display: block;
   text-align: center;
@@ -35,6 +32,7 @@
   background: none transparent;
   border: 0 none;
 }
+
 .select-box1 {
   background: #7ebcff;
   text-align: center;
@@ -50,8 +48,17 @@
   text-align: center;
 }
 
-.select-box {
+.select-box4 {
   background: #7ebcff;
+  text-align: center;
+}
+
+.select-box5 {
+  background: #ffc4bf;
+  text-align: center;
+}
+.select-box6 {
+  background: #ffc4bf;
   text-align: center;
 }
 
@@ -60,9 +67,11 @@
   padding: 5px 10px;
   cursor: pointer;
 }
+
 .open .label::after {
-   content: "▲";
+  content: "▲";
 }
+
 .label::after {
   content: "▼";
   font-size: 10px;
@@ -72,5 +81,3 @@
   padding: 20px 15px;
   border-left: 5px solid #fff;
 }
-
-

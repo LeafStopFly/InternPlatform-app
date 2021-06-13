@@ -1043,6 +1043,7 @@ pre code {
   }
 
   .col-sm-10 {
+    color: pink;
     flex: 0 0 83.3333333333%;
     max-width: 83.3333333333%;
   }
@@ -2746,6 +2747,7 @@ fieldset:disabled a.btn {
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
 .show>.btn-secondary.dropdown-toggle {
+  font-weight: 700;
   color: #fff;
   background-color: #4ba2ff;
   border-color: #3e9bff;
@@ -3220,12 +3222,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-  color: #f8f9fa;
-  border-color: #f8f9fa;
+  color: #7ebcff;
+  border-color: black;
+  
 }
 
 .btn-outline-light:hover {
-  color: #212529;
+  color: #7ebcff;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
@@ -8694,7 +8697,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-  padding-top: 1.5rem !important;
+  padding-top: 0.7rem !important;
 }
 
 .pr-4,
@@ -8704,7 +8707,7 @@ button.bg-dark:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0.7rem !important;
 }
 
 .pl-4,
@@ -11084,8 +11087,8 @@ a.text-dark:focus {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
 
@@ -11140,7 +11143,7 @@ a.text-dark:focus {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    /* padding-top: calc(6rem + 104px); */
     padding-bottom: 6rem;
   }
 
@@ -11273,8 +11276,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 .portfolio {
-  padding-top: 6rem;
-  padding-bottom: 4.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
 }
 
 .page-section-heading {
