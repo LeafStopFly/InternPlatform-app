@@ -11,11 +11,27 @@ div class="col-sm-4"
   div class="container"
   div class="row"
     h5 class="page-section-heading text-secondary mb-0 d-inline-block" Username:
-    h5 class="col-sm-10" == current_account.username
+    h5 class="col-sm-10" == account.username
   div class="row"
     h5 class="page-section-heading text-secondary mb-0 d-inline-block" Email:
     h5 class="col-sm-10"
-      == current_account.email
+      == account.email
+  hr
+  div class="row" style="vertical-align: bottom;"
+    div class="page-section-heading text-secondary mb-0 d-inline-block"
+      h3 API Access:
+  div class="row"
+    span
+      = "(read-only key valid for one month)"
+  div class="container"
+  div class="row"
+    h5 class="page-section-heading text-secondary mb-0 d-inline-block" API Key:
+    .col-sm-10
+      dd class="blockquote"
+        a data-bs-toggle="collapse" href="#api_key" aria-expanded="false" aria-controls="api_key" show key
+        div id="api_key" class="collapse"
+          dov class="card card-body"
+            pre class="text-wrap" #{account.auth_token}
 
 
 

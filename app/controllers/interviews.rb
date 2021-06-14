@@ -68,7 +68,7 @@ module ISSInternship
         # POST /interviews/
         routing.post do
           routing.redirect '/auth/login' unless @current_account.logged_in?
-          puts "INTERV: #{routing.params}"
+
           interview_data = Form::NewInterview.new.call(routing.params)
           if interview_data.failure?
             flash[:error] = Form.message_values(interview_data)
