@@ -24,10 +24,18 @@ link href="../css/ratingstar.css" rel="stylesheet"
 link href="../css/select.box.css" rel="stylesheet"
 script src="../js/select.box.js"
 
+/ !-- DATEPICKER-->
+link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+link rel="stylesheet" href="/resources/demos/style.css"
+script src="https://code.jquery.com/jquery-1.12.4.js"
+script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+script src="../js/monthpicker.js"
+link href="../css/datepicker.css" rel="stylesheet"
+
 
 section class="page-section" id="contact"
   div class="container"
-      h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" USERNAME
+      h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
       <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
@@ -59,6 +67,14 @@ section class="page-section" id="contact"
                           /<p class="help-block text-danger"></p>
                       </div>
                   </div>
+
+                  /time
+                  div class="date-picker"
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                      <label for="startDate">Start Date</label>
+                      <input class="date-picker" id="startDate" name="startDate" placeholder="Start Date" required="required" data-validation-required-message="Please enter the Date." />
+
+
                   /iss_module
                   <div class="select-box">
                     <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your module</span> </label>
