@@ -4,7 +4,8 @@ DEPENDENCES
 =====
 */
 
-.screen-reader {
+.screen-reader
+.screen-reader2 {
   width: var(--screenReaderWidth, 1px) !important;
   height: var(--screenReaderHeight, 1px) !important;
   padding: var(--screenReaderPadding, 0) !important;
