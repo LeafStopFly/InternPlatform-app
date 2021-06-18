@@ -10,8 +10,8 @@ module ISSInternship
 
       params do
         required(:company_no).maybe(format?: COMPNUM_REGEX)
-        required(:name).filled(:string)
-        required(:address).maybe(:string)
+        # required(:name).filled(:string)
+        # required(:address).maybe(:string)
       end
     end
   end

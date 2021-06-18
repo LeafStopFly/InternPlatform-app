@@ -47,17 +47,18 @@ module ISSInternship
             routing.halt
           end
 
-          CreateNewCompany.new(App.config).call(
-            current_account: @current_account,
-            company_data: company_data.to_h
-          )
+          company = CreateNewCompany.new(App.config).call(
+                      current_account: @current_account,
+                      company_data: company_data.to_h
+                    )
 
+          company['data']['attributes']['name']
           # flash[:notice] = 'Add documents and collaborators to your new project'
         rescue StandardError => e
           puts "FAILURE Creating Company: #{e.inspect}"
           flash[:error] = 'Could not create company'
-        ensure
-          routing.redirect @companies_route
+        # ensure
+        #   routing.redirect @companies_route
         end
       end
     end

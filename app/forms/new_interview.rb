@@ -13,7 +13,7 @@ module ISSInternship
         required(:rating).filled(:float)
         required(:iss_module).maybe(:string)
         required(:time).filled(:string)
-        required(:interview_location).filled(:float)
+        required(:interview_location).filled(:string)
         required(:level).filled(:string)
         required(:recruit_source).maybe(:string)
         required(:result).filled(:string)
@@ -21,6 +21,7 @@ module ISSInternship
         required(:waiting_result_time).maybe(:string)
         required(:advice).maybe(:string)
         required(:company_name).maybe(:string)
+        required(:non_anonymous).filled
       end
     end
   end
