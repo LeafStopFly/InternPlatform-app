@@ -9,7 +9,7 @@ module ISSInternship
       config.messages.load_paths << File.join(__dir__, 'errors/new_internship.yml')
 
       params do
-        required(:title).filled(max_size?: 256, format?: TITLE_REGEX)
+        required(:title).filled
         required(:position).filled(:string)
         required(:rating).filled(:float)
         required(:iss_module).maybe(:string)
@@ -20,6 +20,7 @@ module ISSInternship
         required(:reactionary).filled(:string)
         required(:recruit_source).maybe(:string)
         required(:company_name).maybe(:string)
+        required(:non_anonymous).filled
       end
     end
   end

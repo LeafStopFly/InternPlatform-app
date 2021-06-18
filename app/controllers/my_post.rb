@@ -6,6 +6,7 @@ module ISSInternship
   # Web controller for ISSInternship API
   class App < Roda
     route('mypost') do |routing|
+      routing.redirect '/auth/login' unless @current_account.logged_in?
       routing.on 'internships' do
         routing.on(String) do |intern_id|
           # GET /mypost/internships/[intern_id]

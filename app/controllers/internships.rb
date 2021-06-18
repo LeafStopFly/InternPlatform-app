@@ -7,7 +7,7 @@ module ISSInternship
   class App < Roda
     route('internships') do |routing|
       routing.on do
-        routing.redirect '/auth/login' unless @current_account.logged_in?
+        
         @internships_route = '/internships'
 
         routing.on(String) do |intern_id|
@@ -56,10 +56,9 @@ module ISSInternship
 
         # GET /internships/
         routing.get do
-          internship_list = GetOwnInternships.new(App.config).call(@current_account)
+          internship_list = GetAllInternships.new(App.config).call(@current_account)
 
           internships = Internships.new(internship_list)
-
           view :internship_sharing, locals: {
             current_user: @current_account, internships: internships
           }
@@ -67,7 +66,7 @@ module ISSInternship
 
         # POST /internships/
         routing.post do
-          routing.redirect '/auth/login' unless @current_account.logged_in?
+          routing.params['rating']=routing.params['rating-star'].to_f
 
           internship_data = Form::NewInternship.new.call(routing.params)
           if internship_data.failure?
