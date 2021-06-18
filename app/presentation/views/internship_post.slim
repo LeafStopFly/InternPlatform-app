@@ -52,15 +52,16 @@ javascript:
   }
 
 
-section class="page-section" id="contact"
+<section class="page-section" id="contact">
   <form action="/internships" method="POST" role="form" class="form-horizontal">
-    div class="container"
+    <div class="container">
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+        h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "Internship"
 
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -108,11 +109,12 @@ section class="page-section" id="contact"
                     </div>
 
                     /time
-                    div class="date-picker"
+                    <div class="date-picker">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label for="startDate">Start Date</label>
                         <input class="date-picker" name="year" id="startDate" name="startDate" placeholder="Start Date" required="required" data-validation-required-message="Please enter the Date." />
-
+                      </div>
+                    </div>
 
                     /iss_module
                     <div class="select-box">

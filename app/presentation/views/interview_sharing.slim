@@ -58,19 +58,19 @@ link href="../css/posts.css" rel="stylesheet"
 </section>
 
 section#sec-1a5a.u-clearfix.u-section-1
-  - interviews.all.each do |interv|
-    .u-clearfix.u-sheet.u-sheet-1
-      .u-expanded-width.u-layout-grid.u-list.u-list-1
-        .u-repeater.u-repeater-1
+  .u-clearfix.u-sheet.u-sheet-1
+    .u-expanded-width.u-layout-grid.u-list.u-list-1
+      .u-repeater.u-repeater-1
+        - interviews.all.each do |interv|
           .u-border-3.u-border-custom-color-1.u-container-style.u-list-item.u-repeater-item.u-list-item-1
             .u-container-layout.u-similar-container.u-container-layout-1
               h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{interv.company_name} 
               .u-align-center.u-blog-control.u-metadata.u-metadata-1
                 span.u-meta-author.u-meta-icon User
-                span.u-meta-date.u-meta-icon Fri Jun 11 2021
+                span.u-meta-date.u-meta-icon #{interv.time} 
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
               p.u-align-justify-md.u-align-justify-sm.u-align-justify-xs.u-text.u-text-2 #{interv.description}
-              a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="/#{interv.id}"  learn more
+              a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="/#{interv.id}"  read more
 
 br
 <section class="copyright py-4 text-center text-white">
