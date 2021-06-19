@@ -171,17 +171,27 @@ a {
   background-color: transparent;
 }
 
-a:hover {
+g {
+  color: #ffc4bf;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 3em;
+}
+
+a:hover,
+g:hover {
   color: #ff7d73;
   text-decoration: underline;
 }
 
-a:not([href]) {
+a:not([href]),
+g:not([href]) {
   color: inherit;
   text-decoration: none;
 }
 
-a:not([href]):hover {
+a:not([href]):hover,
+g:not([href]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -10988,6 +10998,7 @@ a.text-dark:focus {
   align-items: center;
 }
 
+
 .divider-custom .divider-custom-line {
   width: 100%;
   max-width: 7rem;
@@ -11004,6 +11015,7 @@ a.text-dark:focus {
 .divider-custom .divider-custom-line:last-child {
   margin-left: 1rem;
 }
+
 
 .divider-custom .divider-custom-icon {
   color: #7ebcff !important;
