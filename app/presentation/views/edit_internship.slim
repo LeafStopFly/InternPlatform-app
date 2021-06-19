@@ -1,36 +1,28 @@
-/ / !-- Core theme JS & CSS-->
-/ script src="../js/scripts.js"
-/ link rel="stylesheet" href="../css/styles.css"
-
-/ / !-- Fonts & ICON CSS-->
-/ link href="../css/heading.css" rel="stylesheet"
-/ link href="../css/body.css" rel="stylesheet"
 script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
 
 / !-- Post JS-->
-script src="../js/post.js"
-script src="../js/post_v.js"
+script src="/js/post.js"
+script src="/js/post_v.js"
 
 / !-- RATINGSTAR JS-->
-link href="../css/ratingstar.css" rel="stylesheet"
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+link href="/css/ratingstar.css" rel="stylesheet"
+link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
   <symbol id="star" viewBox="0 0 26 28">
     <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
   </symbol>
 </svg>
 
-/ !-- SELECTBOX -->
-link href="../css/select.box.css" rel="stylesheet"
-script src="../js/select.box.js"
+/ / !-- SELECTBOX -->
+link href="/css/select.box.css" rel="stylesheet"
+script src="/js/select.box.js"
 
-/ !-- DATEPICKER-->
+/ / !-- DATEPICKER-->
 link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-/ link rel="stylesheet" href="../resources/demos/style.css"
+/ link rel="stylesheet" href="/resources/demos/style.css"
 script src="https://code.jquery.com/jquery-1.12.4.js"
 script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-script src="../js/monthpicker.js"
-link href="../css/datepicker.css" rel="stylesheet"
+script src="/js/datepicker.js"
 
 javascript:
   function searchComp(id) {
@@ -51,9 +43,9 @@ javascript:
     });
   }
 
-
-<section class="page-section" id="contact">
-  <form action="/internships" method="POST" role="form" class="form-horizontal">
+<section class="page-section" id="card">
+  form action="/internships/#{internship.id}" method="POST" role="form" class="form-horizontal"
+    input type='hidden' name='action' value='edit'
     <div class="container">
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
         <div class="divider-custom">
@@ -69,14 +61,13 @@ javascript:
                     <div class="sentMessage">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Title</label>
-                            <input class="form-control" name="title" id="name" type="text" placeholder="Title" required="required" data-validation-required-message="Please enter the title." />
-                            /<p class="help-block text-danger"></p>
+                            input class="form-control" name="title" id="name" type="text" placeholder="Title" required="required" value="#{internship.title}"
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Position</label>
-                            <input class="form-control" name="position" id="position" type="text" placeholder="Intern Position" required="required" data-validation-required-message="Please enter your intern position." />
+                            input class="form-control" name="position" id="position" type="text" placeholder="Intern Position" required="required" value="#{internship.position}"
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -86,8 +77,7 @@ javascript:
                         <div class="col" valign="center">
                           <div class="form-group floating-label-form-group">
                             <label>Company</label>
-                            <input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" data-validation-required-message="Please enter your intern company." />
-                            /<p class="help-block text-danger"></p>
+                            input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" value="#{internship.company_name}"
                           </div>
                         </div>
                         <div class="col-1">
@@ -111,8 +101,8 @@ javascript:
                     /time
                     <div class="date-picker">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label for="startDate">Start Date</label>
-                        <input class="date-picker" name="year" id="startDate" placeholder="Start Date" required="required" data-validation-required-message="Please enter the Date." />
+                        <label for="editDate">Start Date</label>
+                        input class="date-picker" name="year" id="editDate" required="required" value="#{internship.year}"
                       </div>
                     </div>
 
@@ -178,8 +168,7 @@ javascript:
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Job Description</label>
-                            <textarea class="form-control" name="job_description" id="message" rows="5" placeholder="Job Description" required="required" data-validation-required-message="Please enter job description."></textarea>
-                            /<p class="help-block text-danger"></p>
+                            textarea class="form-control" name="job_description" id="message" rows="5" required="required" ="#{internship.title}" 
                         </div>
                     </div>
 
@@ -187,8 +176,7 @@ javascript:
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Reactionary</label>
-                            <textarea class="form-control" name="reactionary" id="message" rows="5" placeholder="Reactionary" required="required" data-validation-required-message="Please enter the reactionary."></textarea>
-                            /<p class="help-block text-danger"></p>
+                            textarea class="form-control" name="reactionary" id="message" rows="5" required="required" ="#{internship.reactionary}"
                         </div>
                     </div>
 
@@ -252,11 +240,11 @@ javascript:
                     <br />
                     
                     <div id="success"></div>
-                    button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
+                    button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" EDIT
                     br
                     a type="button" class="btn btn-primary btn-block" href="/mypost" Cancel
                 </form>
             </div>
         </div>
-  </div>
+    </div>
   

@@ -14,6 +14,24 @@ module ISSInternship
         routing.on(String) do |intern_id|
           @internship_route = "#{@internships_route}/#{intern_id}"
 
+          routing.on 'edit' do
+            # GET /internships/[intern_id]/edit
+            routing.get do
+              
+              intern_info = GetInternship.new(App.config).call(
+                @current_account, intern_id
+              )
+              intern = Internship.new(intern_info)
+
+              view :edit_internship, locals: {
+                current_account: @current_account, internship: intern
+              }
+            rescue StandardError => e
+              puts "#{e.inspect}\n#{e.backtrace}"
+              flash[:error] = 'Internship not found'
+              routing.redirect @internships_route
+            end
+          end
           # GET /internships/[intern_id]
           routing.get do
             intern_info = GetInternship.new(App.config).call(
@@ -41,13 +59,21 @@ module ISSInternship
                             message: 'Deleted the internship.' }
             }
 
+            routing.params['rating']=routing.params['rating-star'].to_f
+
+            new_data = Form::NewInternship.new.call(routing.params)
+            if new_data.failure?
+              flash[:error] = Form.message_values(new_data)
+              routing.halt
+            end
             task = task_list[action]
             task[:service].new(App.config).call(
               current_account: @current_account,
-              intern_id: intern_id
+              intern_id: intern_id,
+              internship_data: new_data.to_h
             )
-            flash[:notice] = task[:message]
 
+            flash[:notice] = "Updated internship post  #{new_data[:title]}"
           rescue StandardError
             flash[:error] = 'Could not update internship post'
           ensure
