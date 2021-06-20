@@ -13,6 +13,24 @@ module ISSInternship
         routing.on(String) do |interv_id|
           @interview_route = "#{@interviews_route}/#{interv_id}"
 
+          routing.on 'edit' do
+            # GET /interviews/[interv_id]/edit
+            routing.get do
+              
+              interv_info = GetInterview.new(App.config).call(
+                @current_account, interv_id
+              )
+              interv = Interview.new(interv_info)
+
+              view :edit_interview, locals: {
+                current_account: @current_account, interview: interv
+              }
+            rescue StandardError => e
+              puts "#{e.inspect}\n#{e.backtrace}"
+              flash[:error] = 'Interview not found'
+              routing.redirect @interviews_route
+            end
+          end
           # GET /interviews/[interv_id]
           routing.get do
             interv_info = GetInterview.new(App.config).call(
@@ -40,10 +58,18 @@ module ISSInternship
                             message: 'Deleted the interview.' }
             }
 
+            routing.params['level']=routing.params['rating-star']
+            routing.params['rating']=routing.params['rating2-star'].to_f
+            new_data = Form::NewInterview.new.call(routing.params)
+            if new_data.failure?
+              flash[:error] = Form.message_values(new_data)
+              routing.halt
+            end
             task = task_list[action]
             task[:service].new(App.config).call(
               current_account: @current_account,
-              intern_id: intern_id
+              interv_id: interv_id,
+              interview_data: new_data.to_h
             )
             flash[:notice] = task[:message]
 
@@ -81,7 +107,7 @@ module ISSInternship
             interview_data: interview_data.to_h
           )
 
-          # flash[:notice] = 'Add documents and collaborators to your new project'
+          flash[:notice] = "Add Interview Sharing! #{interview_data[:position]}"
         rescue StandardError => e
           puts "FAILURE Creating Interview: #{e.inspect}"
           flash[:error] = 'Could not create interview'

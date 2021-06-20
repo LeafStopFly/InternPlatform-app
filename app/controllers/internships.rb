@@ -73,7 +73,7 @@ module ISSInternship
               internship_data: new_data.to_h
             )
 
-            flash[:notice] = "Updated internship post  #{new_data[:title]}"
+            flash[:notice] = task[:message]
           rescue StandardError
             flash[:error] = 'Could not update internship post'
           ensure
@@ -106,7 +106,7 @@ module ISSInternship
             internship_data: internship_data.to_h
           )
 
-          # flash[:notice] = 'Add documents and collaborators to your new project'
+          flash[:notice] = "Add Internship Sharing! #{internship_data[:title]}"
         rescue StandardError => e
           puts "FAILURE Creating Internship: #{e.inspect}"
           flash[:error] = 'Could not create internship'

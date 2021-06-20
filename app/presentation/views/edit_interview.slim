@@ -1,18 +1,11 @@
-/ / !-- Core theme JS & CSS-->
-/ script src="../js/scripts.js"
-/ link rel="stylesheet" href="../css/styles.css"
-
-/ / !-- Fonts & ICON CSS-->
-/ link href="../css/heading.css" rel="stylesheet"
-/ link href="../css/body.css" rel="stylesheet"
 script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
 
 / !-- Post JS-->
-script src="../js/post.js"
-script src="../js/post_v.js"
+script src="/js/post.js"
+script src="/js/post_v.js"
 
 / !-- RATINGSTAR JS-->
-link href="../css/ratingstar.css" rel="stylesheet"
+link href="/css/ratingstar.css" rel="stylesheet"
 link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
   <symbol id="star" viewBox="0 0 26 28">
@@ -21,16 +14,15 @@ link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/
 </svg>
 
 / !-- SELECTBOX -->
-link href="../css/select.box.css" rel="stylesheet"
-script src="../js/select.box.js"
+link href="/css/select.box.css" rel="stylesheet"
+script src="/js/select.box.js"
 
 / !-- DATEPICKER-->
 link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-/ link rel="stylesheet" href="../resources/demos/style.css"
 script src="https://code.jquery.com/jquery-1.12.4.js"
 script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-script src="../js/datepicker.js"
-/ link href="../css/datepicker.css" rel="stylesheet"
+script src="/js/datepicker.js"
+/ link href="/css/datepicker.css" rel="stylesheet"
 
 javascript:
   function searchComp(id) {
@@ -63,13 +55,12 @@ javascript:
 
       <div class="row">
           <div class="col-lg-8 mx-auto">
-              <form action="/interviews" method="POST" role="form" class="form-horizontal">
-
+              form action="/interviews/#{interview.id}" method="POST" role="form" class="form-horizontal"
+                input type='hidden' name='action' value='edit'
                   <div class="sentMessage">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                           <label>Position</label>
-                          <input class="form-control" name="position" type="text" placeholder="Position" required="required" data-validation-required-message="Please enter the title." />
-                          /<p class="help-block text-danger"></p>
+                          input class="form-control" name="position" type="text" placeholder="Position" required="required" data-validation-required-message="Please enter the position." value="#{interview.position}"
                       </div>
                   </div>
 
@@ -83,32 +74,33 @@ javascript:
                           <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
                         </div>
                       </div>
+                        
                       <div class="form-group floating-label-form-group">
                         <label>Company</label>
-                        <input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" data-validation-required-message="Please enter your intern company." />
-                      </div>   
+                        input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" data-validation-required-message="Please enter your intern company." value="#{interview.company_name}"
+                      </div>
                     </div>
 
                   /time
                   <div class="date-picker">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Interview Date</label>
-                      <input class="form-control" id="datepicker" name="time" type="text" placeholder="Inerview Date" required="required" data-validation-required-message="Please enter the Date." />
+                      input class="form-control" id="datepicker" name="time" type="text" placeholder="Inerview Date" required="required" data-validation-required-message="Please enter the Date." value="#{interview.time}"
                     </div>
                   </div>
                   
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                           <label>Interview location</label>
-                          <input class="form-control" name="interview_location" type="tel" placeholder="Interview location" required="required" />
-                          /<p class="help-block text-danger"></p>
+                          input class="form-control" name="interview_location" type="tel" placeholder="Interview location" required="required" value="#{interview.interview_location}"
                       </div>
                   </div>
 
                   /iss_module
                   <div class="select-box">
-                    <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your module</span> </label>
-                    <select id="select-box1" class="select" name="iss_module">
+                    <label for="select-box1" class="label select-box1"><span class="label-desc">#{interview.iss_module}</span> </label>
+                    select id="select-box1" class="select" name="iss_module"
+                      <option value="#{interview.iss_module}" hidden>Choose here</option>
                       <option value="" ></option>
                       <option value="Information Systems (IS)">Information Systems (IS)</option>
                       <option value="Service Marketing and Management">Service Marketing and Management</option>
@@ -117,12 +109,13 @@ javascript:
                     </select>
                   </div>
 
-                  /time
-
                   /recruit_source
                   <div class="select-box">
-                    <label for="select-box3" class="label select-box3"><span class="label-desc">Recruit Source</span> </label>
-                    <select id="select-box3" class="select" name="recruit_source">
+                    <label for="select-box3" class="label select-box3">
+                        <span class="label-desc">#{interview.recruit_source}</span> 
+                    </label>
+                    select id="select-box3" class="select" name="recruit_source"
+                      <option value="#{interview.recruit_source}" hidden>Choose here</option>
                       <option value="">Choose here</option>
                       <option value="Linkedin">Linkedin</option>
                       <option value="CakeResume">CakeResume</option>
@@ -139,8 +132,7 @@ javascript:
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                           <label>Description</label>
-                          <textarea class="form-control" name="description" rows="5" placeholder="Interview Description" required="required" data-validation-required-message="Please enter job description."></textarea>
-                          /<p class="help-block text-danger"></p>
+                          textarea class="form-control" name="description" rows="5" placeholder="Interview Description" required="required" data-validation-required-message="Please enter job description." = "#{interview.description}"
                       </div>
                   </div>
 
@@ -148,15 +140,15 @@ javascript:
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                           <label>Advice</label>
-                          <textarea class="form-control" name="advice" rows="5" placeholder="Advice" required="required" data-validation-required-message="Please enter the reactionary."></textarea>
-                          /<p class="help-block text-danger"></p>
+                          textarea class="form-control" name="advice" rows="5" placeholder="Advice" required="required" data-validation-required-message="Please enter the reactionary." ="#{interview.advice}"
                       </div>
                   </div>
 
                   /Wating result time
                   <div class="select-box">
-                    <label for="select-box4" class="label select-box4"><span class="label-desc">Wating result time</span> </label>
-                    <select id="select-box4" class="select" name="waiting_result_time">
+                    <label for="select-box4" class="label select-box4"><span class="label-desc">#{interview.waiting_result_time}</span> </label>
+                    select id="select-box4" class="select" name="waiting_result_time"
+                      <option value="#{interview.waiting_result_time}" hidden>Choose here</option>
                       <option value="">Choose here</option>
                       <option value="3 days">3 days</option>
                       <option value="3-7 days">3-7 days</option>
@@ -167,8 +159,9 @@ javascript:
 
                   /result
                   <div class="select-box">
-                    <label for="select-box5" class="label select-box4"><span class="label-desc">Result</span> </label>
-                    <select id="select-box5" class="select" name="result">
+                    <label for="select-box5" class="label select-box4"><span class="label-desc">#{interview.result}</span> </label>
+                    select id="select-box5" class="select" name="result"
+                      <option value="#{interview.result}" hidden>Choose here</option>
                       <option value="">Choose here</option>
                       <option value="Offer get">Offer get</option>
                       <option value="Didn't get offer">Didn't get offer</option>
