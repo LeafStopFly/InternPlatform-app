@@ -73,28 +73,17 @@ javascript:
                     </div>
                     br
                     <div class="control-group">
-                      <div class="row">
-                        <div class="col" valign="center">
-                          <div class="form-group floating-label-form-group">
-                            <label>Company</label>
-                            input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" value="#{internship.company_name}"
-                          </div>
+                      <div class="form-row align-items-center">
+                        <div class="col-auto" id="ccc">
+                          <p>輸入統一編號來尋找公司</p>
+                          <label class="sr-only" for="inlineFormInput">Name</label>
+                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="tax ID number" value="">
+                          <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
                         </div>
-                        <div class="col-1">
-                          <p> or </p>
-                        </div>
-                        <div class="col">
-                          <div class="form-row align-items-center">
-                            <div class="col-auto" id="ccc">
-                              <p>輸入統一編號來尋找公司</p>
-                              <label class="sr-only" for="inlineFormInput">Name</label>
-                              <input type="text" class="form-control mb-2" id="comp_no" placeholder="tax ID number" value="">
-                            </div>
-                            <div class="col-auto">
-                              <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
-                            </div>
-                          </div>
-                        </div>
+                      </div>
+                      <div class="form-group floating-label-form-group">
+                        <label>Company</label>
+                        input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" value="#{internship.company_name}"
                       </div>
                     </div>
 
@@ -108,8 +97,9 @@ javascript:
 
                     /iss_module
                     <div class="select-box">
-                      <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your module</span> </label>
+                      <label for="select-box1" class="label select-box1"><span class="label-desc">#{internship.iss_module}</span> </label>
                       <select id="select-box1" class="select" name="iss_module">
+                        <option value="#{internship.iss_module}" hidden>Choose here</option>
                         <option value="" ></option>
                         <option value="Information Systems (IS)">Information Systems (IS)</option>
                         <option value="Service Marketing and Management">Service Marketing and Management</option>
@@ -120,8 +110,9 @@ javascript:
 
                     /period
                     <div class="select-box">
-                      <label for="select-box2" class="label select-box2"><span class="label-desc">Internship Period</span> </label>
+                      <label for="select-box2" class="label select-box2"><span class="label-desc">#{internship.period}</span> </label>
                       <select id="select-box2" class="select" name="period">
+                        <option value="#{internship.period}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="Summer Internship">Summer Internship</option>
                         <option value="Winter internship">Winter Internship</option>
@@ -133,8 +124,9 @@ javascript:
 
                     /recruit_source
                     <div class="select-box">
-                      <label for="select-box3" class="label select-box3"><span class="label-desc">Recruit Source</span> </label>
+                      <label for="select-box3" class="label select-box3"><span class="label-desc">#{internship.recruit_source}</span> </label>
                       <select id="select-box3" class="select" name="recruit_source">
+                        <option value="#{internship.recruit_source}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="Linkedin">Linkedin</option>
                         <option value="CakeResume">CakeResume</option>
@@ -149,8 +141,9 @@ javascript:
 
                     /salary
                     <div class="select-box">
-                      <label for="select-box4" class="label select-box4"><span class="label-desc">Salary</span> </label>
+                      <label for="select-box4" class="label select-box4"><span class="label-desc">#{internship.salary}</span> </label>
                       <select id="select-box4" class="select" name="salary">
+                        <option value="#{internship.salary}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="NO PAY">NO PAY</option>
                         <option value="NTD 1- NTD 20,000">NTD 1- NTD 20,000</option>

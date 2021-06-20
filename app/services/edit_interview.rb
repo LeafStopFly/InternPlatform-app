@@ -12,9 +12,9 @@ class EditInterview
     @config.API_URL
   end
 
-  def call(current_account:, interv_id:)
+  def call(current_account:, interv_id:, interview_data:)
     response = HTTP.auth("Bearer #{current_account.auth_token}")
-                   .put("#{api_url}/interviews/#{interv_id}")
+                   .post("#{api_url}/interviews/#{interv_id}", json: interview_data)
 
     raise InterviewNotEdited unless response.code == 200
   end
