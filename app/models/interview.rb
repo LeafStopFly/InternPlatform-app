@@ -7,7 +7,7 @@ module ISSInternship
   class Interview
     attr_reader :id, :position, :rating, :iss_module, # basic info
                 :time, :interview_location, :level, :recruit_source, :result, :description,
-                :waiting_result_time, :advice, :company_name, :non_anonymous # full details
+                :waiting_result_time, :advice, :company_name, :non_anonymous, :author # full details
 
     def initialize(interv_info)
       process_attributes(interv_info['attributes'])
@@ -31,6 +31,8 @@ module ISSInternship
       @waiting_result_time = attributes['waiting_result_time']
       @advice = attributes['advice']
       @company_name = attributes['company_name']
+      @non_anonymous = attributes['non_anonymous']
+      @author = attributes['author']
     end
 
     # def process_relationships(relationships)
