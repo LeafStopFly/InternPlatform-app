@@ -611,6 +611,9 @@ pre code {
   .container {
     max-width: 1140px;
   }
+  .masthead{
+    max-width: 100% !important;
+  }
 }
 
 .container-fluid,
@@ -629,7 +632,7 @@ pre code {
 
   .container-sm,
   .container {
-    max-width: 540px;
+    max-width:100%;
   }
 }
 
@@ -638,7 +641,7 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 720px;
+    max-width: 100%;
   }
 }
 
@@ -648,7 +651,7 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 960px;
+    max-width: 100%;
   }
 }
 
@@ -659,7 +662,10 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1140px;
+    max-width: 100%;
+  }
+  .masthead{
+    max-width: 100% !important;
   }
 }
 
@@ -3387,7 +3393,6 @@ input[type="button"].btn-block {
     transition: none;
   }
 }
-
 
 .br-icon{
   position: fixed;
@@ -10974,8 +10979,21 @@ a.text-dark:focus {
   }
 }
 
+.ccarea{
+  width:50%;
+  left:0;
+  margin:0 auto !important;
+}
+
+
+.allcompany{
+  width:90%;
+  left:0;
+  margin:0 auto !important;
+}
+
 .page-section {
-  padding: 6rem 0;
+  padding: 6rem 0;  
 }
 
 .page-section .page-section-heading {
@@ -11137,6 +11155,8 @@ a.text-dark:focus {
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
+  margin:0;
+  max-width:100% !important;
 }
 
 .masthead .masthead-heading {
@@ -11272,6 +11292,9 @@ form .row:first-child .floating-label-form-group {
 }
 
 .footer {
+  position: relative;
+  top: -100px;
+  height: 50px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: #7ebcff;
@@ -11280,6 +11303,15 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: #4ba2ff;
+}
+
+.copyright2 {
+  background-color: #4ba2ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  right: 0px;
+  left: 0px;
 }
 
 #brandImage {

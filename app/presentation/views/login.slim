@@ -12,28 +12,29 @@ link href="../css/select.box.css" rel="stylesheet"
 script src="../js/select.box.js"
 
 div class="row"
-  div class="col-sm-4"
-  div class="col-sm-4 text-center"
-    h4 class="page-section-heading text-secondary mb-0 d-inline-block text-center" <br>Login with credentials
+  div class="container text-center"
+    h4 class="page-section-heading text-secondary mb-0 d-inline-block text-center" <br>Login <br>
+
     form method='post' action='/auth/login' id='form-login'
-      div class="form-group text-left"
-        label for='input-username' Username
-        input type='text' name='username' id='input-username' class="form-control"
-      div class="form-group text-left"
-        label for='input-password' Password
-        input type='password' name='password' id='input-password' class="form-control"
-      
-      button type='submit' id='button-login' value='login' class="btn btn-primary btn-block" login
+      div class="col-sm-6 mx-auto"
+        div class="form-group text-left"
+          label for='input-username' Username
+          input type='text' name='username' id='input-username' class="form-control"
+        div class="form-group text-left"
+          label for='input-password' Password
+          input type='password' name='password' id='input-password' class="form-control"
+        
+        button type='submit' id='button-login' value='login' class="btn btn-primary btn-block" login
 
 <br>
 div class="row"
   div class="col-sm-4"
-  div class="col-sm-4 text-center"
+  div class="container text-center"
     a class="divider-custom-icon" href=gh_oauth_url
-        span class="fab fa-github fa-lg"
+        span class="fab fa-github fa-3x"
   
-div class="text-center"
-  h6 class="page-section-heading text-secondary mb-0 d-inline-block text-center"other login method
+div class="container text-center"
+  h5 class="page-section-heading text-secondary mb-0 d-inline-block text-center"other login method
 
     
 
@@ -48,3 +49,7 @@ div class="text-center"
 /         span class="fas fa-camera fa-3x"
 /         == "Github Sign-in"
 /   .col-sm-1
+
+footer class="copyright2 py-4 text-center text-white"
+  div class="container" 
+    small class="pre-wrap"Copyright © LeafStopFly 2021
