@@ -7,7 +7,7 @@ module ISSInternship
   class Internship
     attr_reader :id, :title, :position, :rating, :iss_module, # basic info
                 :year, :period, :job_description, :salary, :reactionary, :recruit_source,
-                :company_name, :non_anonymous # full details
+                :company_name, :non_anonymous, :author # full details
 
     def initialize(intern_info)
       process_attributes(intern_info['attributes'])
@@ -30,6 +30,8 @@ module ISSInternship
       @reactionary = attributes['reactionary']
       @recruit_source = attributes['recruit_source']
       @company_name = attributes['company_name']
+      @non_anonymous = attributes['non_anonymous']
+      @author = attributes['author']
     end
 
     # def process_relationships(relationships)
