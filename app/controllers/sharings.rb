@@ -9,23 +9,23 @@ module ISSInternship
     route('share') do |routing|
       # GET /share/internship
       routing.get('internship') do
-        company_list = GetAllCompanies.new(App.config).call
+        # company_list = GetAllCompanies.new(App.config).call
 
-        companies = Companies.new(company_list)
+        # companies = Companies.new(company_list)
 
         view :internship_post, locals: {
-          current_user: @current_account, companies: companies
+          current_user: @current_account
         }
       end
 
       # GET /share/interview
       routing.get('interview') do
-        company_list = GetAllCompanies.new(App.config).call
+        # company_list = GetAllCompanies.new(App.config).call
 
-        companies = Companies.new(company_list)
+        # companies = Companies.new(company_list)
 
         view :interview_post, locals: {
-          current_user: @current_account, companies: companies
+          current_user: @current_account
         }
       end
     end

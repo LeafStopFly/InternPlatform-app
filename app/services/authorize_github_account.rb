@@ -38,10 +38,9 @@ module ISSInternship
     def get_sso_account_from_api(access_token)
       signed_sso_info = { access_token: access_token }
         .then { |sso_info| SignedMessage.sign(sso_info) }
-
       response =
         HTTP.post("#{@config.API_URL}/auth/sso",
-                  json: { access_token: access_token })
+                  json: signed_sso_info)
       raise if response.code >= 400
 
       account_info = JSON.parse(response)['data']['attributes']
