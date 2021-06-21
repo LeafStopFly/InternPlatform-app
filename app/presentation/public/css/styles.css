@@ -4644,6 +4644,92 @@ input[type="button"].btn-block {
 .tab-content>.active {
   display: block;
 }
+.postnav {
+  background-color: #4ba2ff;
+  position: fixed;
+  bottom: 0 !important;
+  /* top: 40px !important; */
+  height: 5% !important;
+  width: 100%;
+  right: 0px;
+  left: 0px;
+}
+
+.postbar-brand{
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.postbar-brand:hover,
+.postbar-brand:focus {
+  text-decoration: none;
+}
+
+.jobsimple{
+  color: #ffc4bf;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple:hover,
+.jobsimple:after{
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple2{
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple2:hover,
+.jobsimple2:after{
+  color: #ffc4bf;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo{
+  color: #7ebcff;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo:hover,
+.interviewinfo:after{
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo2{
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo2:hover,
+.interviewinfo2:after{
+  color: #7ebcff;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
 
 .navbar {
   position: relative;
@@ -5092,6 +5178,7 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  width: 400px !important;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -10763,6 +10850,10 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-black {
+  color: black !important;
+}
+
 .text-primary {
   color: #ffc4bf !important;
 }
@@ -11048,6 +11139,14 @@ a.text-dark:focus {
   color: #fff !important;
 }
 
+.divider-custom.divider-pink .divider-custom-line {
+  background-color: #ffc4bf !important;
+}
+
+.divider-custom.divider-pink .divider-custom-icon {
+  color: #ffc4bf !important;
+}
+
 .btn-xl {
   padding: 1rem 1.75rem;
   font-size: 1.25rem;
@@ -11166,6 +11265,7 @@ a.text-dark:focus {
 
 .masthead .masthead-subheading {
   font-size: 1.25rem;
+  font-family: 'SB Body' !important;
 }
 
 .masthead .masthead-avatar {
@@ -11185,6 +11285,7 @@ a.text-dark:focus {
 
   .masthead .masthead-subheading {
     font-size: 1.5rem;
+    font-family: 'SB Body' !important;
   }
 }
 
@@ -11313,6 +11414,8 @@ form .row:first-child .floating-label-form-group {
   right: 0px;
   left: 0px;
 }
+
+
 
 #brandImage {
   height: 2rem;

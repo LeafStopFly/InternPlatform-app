@@ -51,6 +51,9 @@ javascript:
     });
   }
 
+title PostInterview
+
+
 <section class="page-section" id="contact">
   <div class="container">
       h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
@@ -61,7 +64,7 @@ javascript:
       </div>
       h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "Interview"
 
-      <div class="row">
+      <div class="row mx-1">
           <div class="col-lg-8 mx-auto">
               <form action="/interviews" method="POST" role="form" class="form-horizontal">
 
@@ -75,12 +78,12 @@ javascript:
 
                   br
                     <div class="control-group">
-                      <div class="form-row align-items-center">
-                        <div class="col-auto" id="ccc">
-                          <p>輸入統一編號來尋找公司</p>
-                          <label class="sr-only" for="inlineFormInput">Name</label>
-                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="tax ID number" value="">
-                          <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
+                      <div class="container">
+                        <div class="container" id="ccc">
+                          <p></p>
+                          <label class="sr-only" for="inlineFormInput">Search Company</label>
+                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="輸入統一編號來尋找公司" value="">
+                           <button type="button" class="btn btn-primary mb-0" onclick='searchComp("comp_no")'>Search Company</button>
                         </div>
                       </div>
                       <div class="form-group floating-label-form-group">
@@ -189,31 +192,31 @@ javascript:
                           <svg class="rating__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">1</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc2" class="rating__item">
                           <svg class="rating__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">2</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc3" class="rating__item">
                           <svg class="rating__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">3</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc4" class="rating__item">
                           <svg class="rating__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">4</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc5" class="rating__item">
                           <svg class="rating__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">5</span>
+                          <span class="screen-reader"></span>
                         </label>	
                       </div>
                       <span class="page__hint">Degree of difficulty</span>
@@ -221,7 +224,7 @@ javascript:
                   </div>
 
                   /rating star
-                  <div class="page__demo">
+                  <div class="page__demo ">
                     <div class="page__group">
                       <div class="rating2">
                         <input type="radio" name="rating2-star" class="rating2__control screen-reader" id="rc6" value=1 style="display:none">
@@ -233,31 +236,31 @@ javascript:
                           <svg class="rating2__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">1</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc7" class="rating2__item">
                           <svg class="rating2__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">2</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc8" class="rating2__item">
                           <svg class="rating2__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">3</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc9" class="rating2__item">
                           <svg class="rating2__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">4</span>
+                          <span class="screen-reader"></span>
                         </label>
                         <label for="rc10" class="rating2__item">
                           <svg class="rating2__star">
                             <use xlink:href="#star"></use>
                           </svg>
-                          <span class="screen-reader">5</span>
+                          <span class="screen-reader"></span>
                         </label>	
                       </div>
                       <span class="page__hint">Rating</span>
@@ -282,7 +285,7 @@ javascript:
                   <div id="success"></div>
                   button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
                   br
-                  a type="button" class="btn btn-primary btn-block" href="/mypost" Cancel
+                  button type='submit' id='sendMessageButton' href="/mypost" class="btn btn-primary btn-block" Cancel
               </form>
           </div>
       </div>

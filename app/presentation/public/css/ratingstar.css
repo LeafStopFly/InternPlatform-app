@@ -25,6 +25,7 @@ CORE STYLES
 .rating {
   --uiRatingColor: var(--ratingColor, #eee);
   --uiRatingColorActive: var(--ratingColorActive, #ffcc00);
+  
 
   display: var(--ratingDisplay, flex);
   font-size: var(--ratingSize, 1rem);
@@ -161,7 +162,7 @@ body {
 }
 
 .page__demo {
-  margin: auto;
+  margin:0 auto;
 }
 
 
@@ -177,7 +178,7 @@ body {
   margin-top: 1rem;
 }
 
-@media (min-width: 641px) {
+
   .page__demo {
     display: flex;
     flex-wrap: wrap;
@@ -188,4 +189,3 @@ body {
     margin-left: 3.5rem;
     margin-right: 3.5rem;
   }
-}

@@ -27,10 +27,11 @@ script src="../js/select.box.js"
 / !-- DATEPICKER-->
 link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
 / link rel="stylesheet" href="../resources/demos/style.css"
-script src="https://code.jquery.com/jquery-1.12.4.js"
+/ script src="https://code.jquery.com/jquery-3.5.1.min.js"
+/ script src="https://code.jquery.com/jquery-1.12.4.js"
 script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
 script src="../js/monthpicker.js"
-link href="../css/datepicker.css" rel="stylesheet"
+link href="../css/monthpicker.css" rel="stylesheet"
 
 javascript:
   function searchComp(id) {
@@ -51,6 +52,7 @@ javascript:
     });
   }
 
+title PostInternship
 
 <section class="page-section" id="contact">
   <form action="/internships" method="POST" role="form" class="form-horizontal">
@@ -63,15 +65,17 @@ javascript:
         </div>
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "Internship"
 
-        <div class="row">
+        <div class="row mx-1">
             <div class="col-lg-8 mx-auto">
                 <form id="contactForm" name="sentMessage">
+
                     <div class="sentMessage">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Title</label>
                             <input class="form-control" name="title" id="name" type="text" placeholder="Title" required="required" data-validation-required-message="Please enter the title." />
                         </div>
                     </div>
+
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Position</label>
@@ -81,12 +85,12 @@ javascript:
                     </div>
                     br
                     <div class="control-group">
-                      <div class="form-row align-items-center">
-                        <div class="col-auto" id="ccc">
-                          <p>輸入統一編號來尋找公司</p>
-                          <label class="sr-only" for="inlineFormInput">Name</label>
-                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="tax ID number" value="">
-                          <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
+                      <div class="container">
+                        <div class="container" id="ccc">
+                          <p></p>
+                          <label class="sr-only" for="inlineFormInput">Search Company</label>
+                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="輸入統一編號來尋找公司" value="">
+                           <button type="button" class="btn btn-primary mb-0" onclick='searchComp("comp_no")'>Search Company</button>
                         </div>
                       </div>
                       <div class="form-group floating-label-form-group">
@@ -96,7 +100,7 @@ javascript:
                     </div>
 
                     /time
-                    <div class="date-picker">
+                    <div class="">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label for="startDate">Start Date</label>
                         <input class="date-picker" name="year" id="startDate" placeholder="Start Date" required="required" data-validation-required-message="Please enter the Date." />
@@ -192,31 +196,31 @@ javascript:
                             <svg class="rating__star">
                               <use xlink:href="#star"></use>
                             </svg>
-                            <span class="screen-reader">1</span>
+                            <span class="screen-reader"></span>
                           </label>
                           <label for="rc2" class="rating__item">
                             <svg class="rating__star">
                               <use xlink:href="#star"></use>
                             </svg>
-                            <span class="screen-reader">2</span>
+                            <span class="screen-reader"></span>
                           </label>
                           <label for="rc3" class="rating__item">
                             <svg class="rating__star">
                               <use xlink:href="#star"></use>
                             </svg>
-                            <span class="screen-reader">3</span>
+                            <span class="screen-reader"></span>
                           </label>
                           <label for="rc4" class="rating__item">
                             <svg class="rating__star">
                               <use xlink:href="#star"></use>
                             </svg>
-                            <span class="screen-reader">4</span>
+                            <span class="screen-reader"></span>
                           </label>
                           <label for="rc5" class="rating__item">
                             <svg class="rating__star">
                               <use xlink:href="#star"></use>
                             </svg>
-                            <span class="screen-reader">5</span>
+                            <span class="screen-reader"></span>
                           </label>	
                         </div>
                         <span class="page__hint">Rating</span>
@@ -241,7 +245,8 @@ javascript:
                     <div id="success"></div>
                     button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
                     br
-                    a type="button" class="btn btn-primary btn-block" href="/mypost" Cancel
+                    <div id="success"></div>
+                    button type='submit' id='sendMessageButton' href="/mypost" class="btn btn-primary btn-block" Cancel
                 </form>
             </div>
         </div>

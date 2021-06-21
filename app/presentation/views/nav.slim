@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-expand-lg bg-secondary" id="mainNav">
   <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">ISS INTERNSHIP</a>
-    <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+    <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">MENU <i class="fas fa-bars"></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       ul class="navbar-nav ml-auto"
         li class="nav-item dropdown"
@@ -32,10 +32,10 @@
     
 
         - if @current_account.logged_in?
-          div class="br-icon"
-            ul 
-              li INTERNSHIP
-              li INTERVIEW
+          / div class="br-icon"
+          /   ul 
+          /     li INTERNSHIP
+          /     li INTERVIEW
           
 
           li class="nav-item mx-0 mx-lg-1"
@@ -48,7 +48,7 @@
               a class="dropdown-item" href='/share/interview'SHARE INTERVIEW
 
           li class="nav-item dropdown"
-            a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
               = "#{@current_account.username}"
 
             div class=-"dropdown-menu"
