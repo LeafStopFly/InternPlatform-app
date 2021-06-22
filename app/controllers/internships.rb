@@ -32,6 +32,22 @@ module ISSInternship
               routing.redirect @internships_route
             end
           end
+
+          routing.on 'delete' do
+            # POST /internships/[intern_id]/delete
+            routing.post do
+              DeleteInternship.new(App.config).call(
+                current_account: @current_account,
+                intern_id: intern_id
+              )
+
+              flash[:notice] = 'Deleted the internship.'
+            rescue StandardError
+              flash[:error] = 'Could not delete internship post'
+            ensure
+              routing.redirect @internships_route
+            end
+          end
           # GET /internships/[intern_id]
           routing.get do
             intern_info = GetInternship.new(App.config).call(
@@ -39,7 +55,7 @@ module ISSInternship
             )
             internship = Internship.new(intern_info)
 
-            view :internship, locals: {
+            view :internship_single, locals: {
               current_account: @current_account, internship: internship
             }
           rescue StandardError => e
@@ -48,17 +64,9 @@ module ISSInternship
             routing.redirect @internships_route
           end
 
+          # Edit
           # POST /internships/[intern_id]
           routing.post do
-            action = routing.params['action']
-
-            task_list = {
-              'edit' => { service: EditInternship,
-                          message: 'Edited the internship.' },
-              'delete' => { service: DeleteInternship,
-                            message: 'Deleted the internship.' }
-            }
-
             routing.params['rating']=routing.params['rating-star'].to_f
 
             new_data = Form::NewInternship.new.call(routing.params)
@@ -66,18 +74,17 @@ module ISSInternship
               flash[:error] = Form.message_values(new_data)
               routing.halt
             end
-            task = task_list[action]
-            task[:service].new(App.config).call(
+            EditInternship.new(App.config).call(
               current_account: @current_account,
               intern_id: intern_id,
               internship_data: new_data.to_h
             )
 
-            flash[:notice] = task[:message]
+            flash[:notice] = 'Edited the internship.'
           rescue StandardError
             flash[:error] = 'Could not update internship post'
           ensure
-            routing.redirect @internships_route
+            routing.redirect @internship_route
           end
         end
 
@@ -111,7 +118,7 @@ module ISSInternship
           puts "FAILURE Creating Internship: #{e.inspect}"
           flash[:error] = 'Could not create internship'
         ensure
-          routing.redirect @internships_route
+          routing.redirect '/mypost'
         end
       end
     end

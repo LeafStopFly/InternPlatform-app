@@ -47,7 +47,6 @@ title EditInternship
 
 <section class="page-section" id="card">
   form action="/internships/#{internship.id}" method="POST" role="form" class="form-horizontal"
-    input type='hidden' name='action' value='edit'
     <div class="container">
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
         <div class="divider-custom">
@@ -163,7 +162,7 @@ title EditInternship
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Job Description</label>
-                            textarea class="form-control" name="job_description" id="message" rows="5" required="required" ="#{internship.title}" 
+                            textarea class="form-control" name="job_description" id="message" rows="5" required="required" ="#{internship.job_description}" 
                         </div>
                     </div>
 

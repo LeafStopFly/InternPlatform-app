@@ -9,9 +9,8 @@ class GetInternship
   end
 
   def call(current_account, intern_id)
-    response = HTTP.auth("Bearer #{current_account.auth_token}")
-                   .get("#{@config.API_URL}/internships/#{intern_id}")
-
+    response = HTTP.get("#{@config.API_URL}/internships/#{intern_id}")
+    
     response.code == 200 ? JSON.parse(response.body.to_s)['data'] : nil
   end
 end
