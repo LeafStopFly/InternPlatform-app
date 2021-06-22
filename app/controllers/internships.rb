@@ -45,7 +45,7 @@ module ISSInternship
             rescue StandardError
               flash[:error] = 'Could not delete internship post'
             ensure
-              routing.redirect @internships_route
+              routing.redirect '/mypost'
             end
           end
           # GET /internships/[intern_id]

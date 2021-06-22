@@ -1,18 +1,5 @@
-/ !-- Core theme JS & CSS-->
-script src="../js/scripts.js"
-link rel="stylesheet" href="../css/styles.css"
-
-
 / !-- Fonts & ICON CSS-->
-link href="../css/heading.css" rel="stylesheet"
-link href="../css/body.css" rel="stylesheet"
 script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
-
-/ !-- SELECTBOX -->
-link href="../css/select.box.css" rel="stylesheet"
-script src="../js/select.box.js"
-
-link href="../css/posts.css" rel="stylesheet"
 
 javascript:
   function DeleteInternship(id, title) {
@@ -22,7 +9,17 @@ javascript:
       type:"POST",
       url:"/internships/"+id+"/delete",
       dataType:"json",
+      headers: {
+      'Content-Type': 'application/json'
+      },
       data: {intern_id: id},
+      success:function(result){
+          alert(result);
+        },
+      error:function(result){
+        console.log(result);
+        window.location = result.responseText;
+      }
     });
   }
 
@@ -33,7 +30,17 @@ javascript:
       type:"POST",
       url:"/interviews/"+id+"/delete",
       dataType:"json",
+      headers: {
+      'Content-Type': 'application/json'
+      },
       data: {interv_id: id},
+      success:function(result){
+          alert(result);
+        },
+      error:function(result){
+        console.log(result);
+        window.location = result.location;
+      }
     });
   }
 
@@ -83,9 +90,10 @@ section#sec-1a5a.u-clearfix.u-section-1
               .u-align-center.u-blog-control.u-metadata.u-metadata-1
                 a href="../internships/#{intern.id}/edit"
                   <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-edit fa-lg"> </i> </span>
-                button type='submit' class="btn divider-custom-icon" style="color: #ffc4bf;" onclick='DeleteInternship("#{intern.id}","#{intern.title}")'
-                  i class="fas fa-trash-alt fa-lg"
-                  / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-trash-alt fa-lg"> </i> </span>
+                form action="/internships/#{intern.id}/delete" method="POST" role="form" class="form-horizontal"
+                  button type='submit' class="btn divider-custom-icon" style="color: #ffc4bf;"
+                    i class="fas fa-trash-alt fa-lg"
+                  / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-trash-alt fa-lg"> </i> </span>  
                 / <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 / span.u-meta-date.u-meta-icon #{intern.year}
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
@@ -100,12 +108,13 @@ section#sec-1a5a.u-clearfix.u-section-1
         - interviews.all.each do |interv|
           .u-border-3.u-border-custom-color-1.u-container-style.u-list-item.u-repeater-item.u-list-item-1
             .u-container-layout.u-similar-container.u-container-layout-1
-              h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{interv.company_name} 
+              h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{interv.position} 
               .u-align-center.u-blog-control.u-metadata.u-metadata-1
                 a href="../interviews/#{interv.id}/edit"
                   <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-edit fa-lg"> </i> </span>
-                button type='submit' class="btn divider-custom-icon" style="color: #ffc4bf;" onclick='DeleteInterview("#{interv.id}")'
-                  i class="fas fa-trash-alt fa-lg"
+                form action="/interviews/#{interv.id}/delete" method="POST" role="form" class="form-horizontal"
+                  button type='submit' class="btn divider-custom-icon" style="color: #ffc4bf;"
+                    i class="fas fa-trash-alt fa-lg"
                 / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-edit fa-lg"> </i> </span>
                 / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-trash-alt fa-lg"> </i> </span>
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1

@@ -44,7 +44,7 @@ module ISSInternship
             rescue StandardError
               flash[:error] = 'Could not delete interview post'
             ensure
-              routing.redirect '/'
+              routing.redirect '/mypost'
             end
           end
 
