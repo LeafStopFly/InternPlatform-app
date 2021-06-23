@@ -12,9 +12,9 @@ class EditInternship
     @config.API_URL
   end
 
-  def call(current_account:, intern_id:)
+  def call(current_account:, intern_id:, internship_data:)
     response = HTTP.auth("Bearer #{current_account.auth_token}")
-                   .put("#{api_url}/internships/#{intern_id}")
+                   .post("#{api_url}/internships/#{intern_id}", json: internship_data)
 
     raise InternshipNotEdited unless response.code == 200
   end

@@ -8,7 +8,7 @@ class GetAllInternships
     @config = config
   end
 
-  def call(current_account)
+  def call
     response = HTTP.get("#{@config.API_URL}/all_internships")
 
     response.code == 200 ? JSON.parse(response.to_s)['data'] : nil

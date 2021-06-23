@@ -1,8 +1,8 @@
 / !-- DATEPICKER-->
 link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
 script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-script src="../js/monthpicker.js"
-link href="../css/monthpicker.css" rel="stylesheet"
+script src="/js/monthpicker.js"
+link href="/css/monthpicker.css" rel="stylesheet"
 
 javascript:
   function searchComp(id) {
@@ -23,10 +23,10 @@ javascript:
     });
   }
 
-title PostInternship
+title EditInternship
 
-<section class="page-section" id="contact">
-  <form action="/internships" method="POST" role="form" class="form-horizontal">
+<section class="page-section" id="card">
+  form action="/internships/#{internship.id}" method="POST" role="form" class="form-horizontal"
     <div class="container">
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
         <div class="divider-custom">
@@ -36,52 +36,51 @@ title PostInternship
         </div>
         h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "Internship"
 
-        <div class="row mx-1">
+        <div class="row">
             <div class="col-lg-8 mx-auto">
                 <form id="contactForm" name="sentMessage">
-
                     <div class="sentMessage">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Title</label>
-                            <input class="form-control" name="title" id="name" type="text" placeholder="Title" required="required" data-validation-required-message="Please enter the title." />
+                            input class="form-control" name="title" id="name" type="text" placeholder="Title" required="required" value="#{internship.title}"
                         </div>
                     </div>
-
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                            <label>Intern Position</label>
-                            <input class="form-control" name="position" id="position" type="text" placeholder="Intern Position" required="required" data-validation-required-message="Please enter your intern position." />
+                            <label>Position</label>
+                            input class="form-control" name="position" id="position" type="text" placeholder="Intern Position" required="required" value="#{internship.position}"
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     br
                     <div class="control-group">
-                      <div class="container">
-                        <div class="container" id="ccc">
-                          <p></p>
-                          <label class="sr-only" for="inlineFormInput">Search Company</label>
-                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="輸入統一編號來尋找公司" value="">
-                           <button type="button" class="btn btn-primary mb-0" onclick='searchComp("comp_no")'>Search Company</button>
+                      <div class="form-row align-items-center">
+                        <div class="col-auto" id="ccc">
+                          <p>輸入統一編號來尋找公司</p>
+                          <label class="sr-only" for="inlineFormInput">Name</label>
+                          <input type="text" class="form-control mb-2" id="comp_no" placeholder="tax ID number" value="">
+                          <button type="button" class="btn btn-primary mb-2" onclick='searchComp("comp_no")'>Search Company</button>
                         </div>
                       </div>
                       <div class="form-group floating-label-form-group">
                         <label>Company</label>
-                        <input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" data-validation-required-message="Please enter your intern company." />
+                        input class="form-control" name="company_name" id="comp_name" type="tel" placeholder="Company" required="required" value="#{internship.company_name}"
                       </div>
                     </div>
 
                     /time
                     <div class="">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label for="startDate">Start Date</label>
-                        <input class="date-picker" name="year" id="startDate" placeholder="Start Date" required="required" data-validation-required-message="Please enter the Date." />
+                        <label for="editDate">Start Date</label>
+                        input class="date-picker" name="year" id="editDate" required="required" value="#{internship.year}"
                       </div>
                     </div>
 
                     /iss_module
                     <div class="select-box">
-                      <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your module</span> </label>
+                      <label for="select-box1" class="label select-box1"><span class="label-desc">#{internship.iss_module}</span> </label>
                       <select id="select-box1" class="select" name="iss_module">
+                        <option value="#{internship.iss_module}" hidden>Choose here</option>
                         <option value="" ></option>
                         <option value="Information Systems (IS)">Information Systems (IS)</option>
                         <option value="Service Marketing and Management">Service Marketing and Management</option>
@@ -92,8 +91,9 @@ title PostInternship
 
                     /period
                     <div class="select-box">
-                      <label for="select-box2" class="label select-box2"><span class="label-desc">Internship Period</span> </label>
+                      <label for="select-box2" class="label select-box2"><span class="label-desc">#{internship.period}</span> </label>
                       <select id="select-box2" class="select" name="period">
+                        <option value="#{internship.period}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="Summer Internship">Summer Internship</option>
                         <option value="Winter internship">Winter Internship</option>
@@ -105,8 +105,9 @@ title PostInternship
 
                     /recruit_source
                     <div class="select-box">
-                      <label for="select-box3" class="label select-box3"><span class="label-desc">Recruit Source</span> </label>
+                      <label for="select-box3" class="label select-box3"><span class="label-desc">#{internship.recruit_source}</span> </label>
                       <select id="select-box3" class="select" name="recruit_source">
+                        <option value="#{internship.recruit_source}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="Linkedin">Linkedin</option>
                         <option value="CakeResume">CakeResume</option>
@@ -121,8 +122,9 @@ title PostInternship
 
                     /salary
                     <div class="select-box">
-                      <label for="select-box4" class="label select-box4"><span class="label-desc">Salary</span> </label>
+                      <label for="select-box4" class="label select-box4"><span class="label-desc">#{internship.salary}</span> </label>
                       <select id="select-box4" class="select" name="salary">
+                        <option value="#{internship.salary}" hidden>Choose here</option>
                         <option value="">Choose here</option>
                         <option value="NO PAY">NO PAY</option>
                         <option value="NTD 1- NTD 20,000">NTD 1- NTD 20,000</option>
@@ -140,8 +142,7 @@ title PostInternship
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Job Description</label>
-                            <textarea class="form-control" name="job_description" id="message" rows="5" placeholder="Job Description" required="required" data-validation-required-message="Please enter job description."></textarea>
-                            /<p class="help-block text-danger"></p>
+                            textarea class="form-control" name="job_description" id="message" rows="5" required="required" ="#{internship.job_description}" 
                         </div>
                     </div>
 
@@ -149,8 +150,7 @@ title PostInternship
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <label>Reactionary</label>
-                            <textarea class="form-control" name="reactionary" id="message" rows="5" placeholder="Reactionary" required="required" data-validation-required-message="Please enter the reactionary."></textarea>
-                            /<p class="help-block text-danger"></p>
+                            textarea class="form-control" name="reactionary" id="message" rows="5" required="required" ="#{internship.reactionary}"
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@ title PostInternship
 
                     /Anonymous
                     <div class="control-group">
-                      <label class="page__hint">Anonymous</label>
+                      <label for="" class="label-desc">Anonymous</label>
                       <div class="col-sm-10">
                         <div class="form-check">
                           <input class="form-check-input" type="radio" name="non_anonymous" id="gridRadios1" value="False">
@@ -214,12 +214,11 @@ title PostInternship
                     </div>
                     <br />
                     
-                    button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
+                    <div id="success"></div>
+                    button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" EDIT
                     br
                     a type="button" class="btn btn-primary btn-block" href="/mypost" Cancel
                 </form>
             </div>
         </div>
     </div>
-  </form>
-</section>

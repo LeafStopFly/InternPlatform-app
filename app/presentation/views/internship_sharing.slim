@@ -1,18 +1,4 @@
-/ !-- Core theme JS & CSS-->
-script src="../js/scripts.js"
-link rel="stylesheet" href="../css/styles.css"
-
-
-/ !-- Fonts & ICON CSS-->
-link href="../css/heading.css" rel="stylesheet"
-link href="../css/body.css" rel="stylesheet"
-script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
-
-/ !-- SELECTBOX -->
-link href="../css/select.box.css" rel="stylesheet"
-script src="../js/select.box.js"
-link href="../css/posts.css" rel="stylesheet"
-
+title InternshipSharing
 
 <header class="masthead bg-primary text-white text-center">
   <div class="container d-flex align-items-center flex-column">
@@ -30,47 +16,48 @@ link href="../css/posts.css" rel="stylesheet"
 </header>
 
 
-<section class="page-section portfolio" id="portfolio">
-/ <div class="container">
-/     <!-- Portfolio Section Heading-->
-/     <div class="text-center">
-/       <h2 class="page-section-heading text-secondary mb-0 d-inline-block">INTERNSHIP SHARING</h2>
+/ <section class="ccarea portfolio" id="portfolio">
+/ / <div class="container">
+/ /     <!-- Portfolio Section Heading-->
+/ /     <div class="text-center">
+/ /       <h2 class="page-section-heading text-secondary mb-0 d-inline-block">INTERNSHIP SHARING</h2>
+/ /     </div>
+
+/ <div class="sidebar-box">
+/   <form action="#" class="search-form">
+/     <div class=" mx-auto form-group">
+/       <span class="icon ion-ios-search"></span>
+/       <input type="text" class="form-control" placeholder="Search...">
 /     </div>
+/   </form>
+/ </div>
 
-<div class="sidebar-box">
-  <form action="#" class="search-form">
-    <div class="form-group">
-      <span class="icon ion-ios-search"></span>
-      <input type="text" class="form-control" placeholder="Search...">
-    </div>
-  </form>
-</div>
-
-<div class="select-box">
-  <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
-  <select id="select-box5" class="select">
-    <option value="Choice 1">Information Systems (IS)</option>
-    <option value="Choice 2">Service Marketing and Management</option>
-    <option value="Choice 3">Service Innovation and Design</option>
-    <option value="Choice 4">Business Analytics</option>
-  </select>
-</div>
-</section>
+/ <div class="select-box">
+/   <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
+/   <select id="select-box5" class="select">
+/     <option value="Choice 1"></option>
+/     <option value="Choice 1">Information Systems (IS)</option>
+/     <option value="Choice 2">Service Marketing and Management</option>
+/     <option value="Choice 3">Service Innovation and Design</option>
+/     <option value="Choice 4">Business Analytics</option>
+/   </select>
+/ </div>
+/ </section>
 
 section#sec-1a5a.u-clearfix.u-section-1
-  - internships.all.each do |intern|
-    .u-clearfix.u-sheet.u-sheet-1
-      .u-expanded-width.u-layout-grid.u-list.u-list-1
-        .u-repeater.u-repeater-1
+  .u-clearfix.u-sheet.u-sheet-1
+    .u-expanded-width.u-layout-grid.u-list.u-list-1
+      .u-repeater.u-repeater-1
+        - internships.all.each do |intern|
           .u-border-3.u-border-custom-color-1.u-container-style.u-list-item.u-repeater-item.u-list-item-1
             .u-container-layout.u-similar-container.u-container-layout-1
               h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{intern.title} 
               .u-align-center.u-blog-control.u-metadata.u-metadata-1
-                span.u-meta-author.u-meta-icon User
-                span.u-meta-date.u-meta-icon Fri Jun 11 2021
+                span.u-meta-author.u-meta-icon #{intern.author}
+                span.u-meta-date.u-meta-icon #{intern.year}
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
               p.u-align-justify-md.u-align-justify-sm.u-align-justify-xs.u-text.u-text-2 #{intern.reactionary}
-              a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="/#{intern.id}"  learn more
+              a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="/internships/#{intern.id}"  read more
 
 br
 <section class="copyright py-4 text-center text-white">

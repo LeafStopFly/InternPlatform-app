@@ -1,0 +1,149 @@
+/ !-- Core theme JS-->
+script src="/js/scripts.js"
+
+title InternshipSharing
+
+<header class="page-section bg-white text-primary text-center">
+  <div class="container d-flex align-items-center flex-column">
+    <!-- Masthead Heading-->
+    <h1 class="masthead-heading mb-0" id="page-top">INTERNSHIP SHARING</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    h1 class="text-center text-uppercase text-primary mb-0" ="#{internship.title}"
+    h5 class="text-center text-uppercase text-secondary mb-0" ="#{internship.author}"
+    h5 class="text-center text-uppercase text-secondary mb-0"="#{internship.iss_module}"
+    </div>
+  </div>  
+</header>
+
+
+<nav class="postnav navbar navbar-expand-lg bg-secondary fixed-bottom" id="mainNav">
+  <div class="container">
+    a class="navbar-brand js-scroll-trigger" href="#page-top" ="#{internship.title}"
+    ul class="navbar-nav ml-auto"
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#info">JOB INFO</a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#des">JOB DESCRIPTION</a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#rea">REACTIONARY</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-section bg-secondary " id="info">
+  <div class="container">
+      <!-- Portfolio Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading text-white text-uppercase mb-0 d-inline-block"><br>Job Infomation</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <!-- Portfolio Grid Items-->
+      <div class="row justify-content-center mx-3">
+          <!-- Portfolio Items-->
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Company
+            h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.company_name}"
+          </div>
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Intern Position
+              h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.position}"
+          </div>
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Start Date
+              h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.year}"
+          </div>
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Internship Period
+              h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.period}"
+          </div>
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Recruit Source 
+              h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.recruit_source}"
+          </div>
+          <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Salary
+              h2 class="jobsimple2 text-uppercase mb-0" ="#{internship.salary}"
+          </div>
+      </div> 
+  </div>
+</section>
+  
+
+<section class="page-section bg-primary text-white mb-0 " id="des">
+  <div class="container d-flex flex-column">
+      <!-- About Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">JOB DESCRIPTION</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      h4 class="homepage" #{internship.job_description}
+  </div>
+</section>
+
+<section class="page-section bg-secondary text-white mb-0" id="rea">
+  <div class="container d-flex flex-column">
+      <!-- About Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">REACTOINARY</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      h4 class="homepage" #{internship.reactionary}
+      br
+      <div class="page__demo">
+        <div class="page__group">
+          h4 class="text-white" Rating: #{internship.rating} <i class="fas fa-star"></i>
+          / <div class="rating">
+          /   <input type="radio" name="rating-star" class="frating__control screen-reader" id="rc1" value="1" style="display:none">
+          /   <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc2" value=2 style="display:none">
+          /   <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc3" value=3 style="display:none">
+          /   <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc4" value=4 style="display:none">
+          /   <input type="radio" name="rating-star" class="rating__control screen-reader" id="rc5" value=5 style="display:none">
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /        <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc2" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc3" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc4" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc5" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>	
+          / </div>
+        </div>
+      </div>
+  </div>
+</section>

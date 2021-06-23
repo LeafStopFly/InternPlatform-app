@@ -1,38 +1,27 @@
-/ Fontawesome and Bootstrap-Social for Github buttons
-/ link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"
-/ link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.css" integrity="sha384-KMis1ci1uYEByUqyQ+ys92P9u9WtqmYQmUvEpXsB5BuMYyTHljPVNJ24Jl6ib3o8" crossorigin="anonymous"
-
-/ link rel="stylesheet" href="../css/styles.css"
-/ / !-- Core theme JS-->
-/ script src="../js/scripts.js"
-
-/ / !-- Fonts CSS-->
-/ link href="../css/heading.css" rel="stylesheet"
-/ link href="../css/body.css" rel="stylesheet"
-
+title Company
 br
-div class="col-sm-4"
-  div class="col-sm-4"
 
+div class="allcompany text-center"
   div class="row" style="vertical-align: bottom;"
-    div class="page-section-heading text-secondary mb-0 d-inline-block"
+    div class="allcompany text-secondary mb-0 d-inline-block"
       h3 All Companies
-    div class="col-xs-3"
   br
 
-
-table class="table"
-  thead
-    tr
-      th Company name
-      th 統一編號
-      th address
-  tbody
-    - companies.all.each do |comp|
+  table class="table"
+    thead
       tr
-        td 
-          a href="/#{comp.id}" #{comp.name}
-        td 
-          p #{comp.company_no}
-        td
-          p #{comp.address}
+        th Company name
+        th 統一編號
+        th Address
+    tbody
+      - companies.all.each do |comp|
+        tr
+          td 
+            a href="/#{comp.id}" #{comp.name}
+          td 
+            p #{comp.company_no}
+          td
+            p #{comp.address}
+
+<footer class="copyright2 py-4 text-center text-white">
+  <div class=""><small class="pre-wrap">Copyright © LeafStopFly 2021 </small></div>

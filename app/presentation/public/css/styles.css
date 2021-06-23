@@ -171,17 +171,27 @@ a {
   background-color: transparent;
 }
 
-a:hover {
+g {
+  color: #ffc4bf;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 3em;
+}
+
+a:hover,
+g:hover {
   color: #ff7d73;
   text-decoration: underline;
 }
 
-a:not([href]) {
+a:not([href]),
+g:not([href]) {
   color: inherit;
   text-decoration: none;
 }
 
-a:not([href]):hover {
+a:not([href]):hover,
+g:not([href]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -601,6 +611,9 @@ pre code {
   .container {
     max-width: 1140px;
   }
+  .masthead{
+    max-width: 100% !important;
+  }
 }
 
 .container-fluid,
@@ -619,7 +632,7 @@ pre code {
 
   .container-sm,
   .container {
-    max-width: 540px;
+    max-width:100%;
   }
 }
 
@@ -628,7 +641,7 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 720px;
+    max-width: 100%;
   }
 }
 
@@ -638,7 +651,7 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 960px;
+    max-width: 100%;
   }
 }
 
@@ -649,7 +662,10 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1140px;
+    max-width: 100%;
+  }
+  .masthead{
+    max-width: 100% !important;
   }
 }
 
@@ -2149,6 +2165,10 @@ pre code {
   border: 0;
 }
 
+.form-horizontal{
+  display: inline;
+}
+
 .form-control {
   font-family: 'SB Body';
   display: block;
@@ -2166,6 +2186,8 @@ pre code {
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+
 
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2629,6 +2651,24 @@ textarea.form-control.is-invalid {
   .form-inline .custom-control-label {
     margin-bottom: 0;
   }
+}
+
+.btndel {
+  display: inline;
+  float: right;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
+  padding: 0rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn {
@@ -3377,7 +3417,6 @@ input[type="button"].btn-block {
     transition: none;
   }
 }
-
 
 .br-icon{
   position: fixed;
@@ -4629,6 +4668,92 @@ input[type="button"].btn-block {
 .tab-content>.active {
   display: block;
 }
+.postnav {
+  background-color: #4ba2ff;
+  position: fixed;
+  bottom: 0 !important;
+  /* top: 40px !important; */
+  height: 5% !important;
+  width: 100%;
+  right: 0px;
+  left: 0px;
+}
+
+.postbar-brand{
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.postbar-brand:hover,
+.postbar-brand:focus {
+  text-decoration: none;
+}
+
+.jobsimple{
+  color: #ffc4bf;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple:hover,
+.jobsimple:after{
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple2{
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.jobsimple2:hover,
+.jobsimple2:after{
+  color: #ffc4bf;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo{
+  color: #7ebcff;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo:hover,
+.interviewinfo:after{
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo2{
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
+.interviewinfo2:hover,
+.interviewinfo2:after{
+  color: #7ebcff;
+  font-size: 1.5rem;
+  font-family: 'SB Body';
+  font-weight: bold;
+}
+
 
 .navbar {
   position: relative;
@@ -5077,6 +5202,7 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  width: 400px !important;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -10748,6 +10874,10 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-black {
+  color: black !important;
+}
+
 .text-primary {
   color: #ffc4bf !important;
 }
@@ -10964,8 +11094,21 @@ a.text-dark:focus {
   }
 }
 
+.ccarea{
+  width:50%;
+  left:0;
+  margin:0 auto !important;
+}
+
+
+.allcompany{
+  width:90%;
+  left:0;
+  margin:0 auto !important;
+}
+
 .page-section {
-  padding: 6rem 0;
+  padding: 6rem 0;  
 }
 
 .page-section .page-section-heading {
@@ -10988,6 +11131,7 @@ a.text-dark:focus {
   align-items: center;
 }
 
+
 .divider-custom .divider-custom-line {
   width: 100%;
   max-width: 7rem;
@@ -11005,6 +11149,7 @@ a.text-dark:focus {
   margin-left: 1rem;
 }
 
+
 .divider-custom .divider-custom-icon {
   color: #7ebcff !important;
   font-size: 2rem;
@@ -11016,6 +11161,14 @@ a.text-dark:focus {
 
 .divider-custom.divider-light .divider-custom-icon {
   color: #fff !important;
+}
+
+.divider-custom.divider-pink .divider-custom-line {
+  background-color: #ffc4bf !important;
+}
+
+.divider-custom.divider-pink .divider-custom-icon {
+  color: #ffc4bf !important;
 }
 
 .btn-xl {
@@ -11125,6 +11278,8 @@ a.text-dark:focus {
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
+  margin:0;
+  max-width:100% !important;
 }
 
 .masthead .masthead-heading {
@@ -11132,8 +11287,26 @@ a.text-dark:focus {
   line-height: 2.75rem;
 }
 
+.homepage{
+  font-size: 1.25rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;
+}
+
+.postpage{
+  font-size: 1.25rem;
+  margin-left: 40%;
+  margin-right: 40%;
+  text-align: justify;
+}
+
 .masthead .masthead-subheading {
   font-size: 1.25rem;
+  font-family: 'SB Body' !important;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;
 }
 
 .masthead .masthead-avatar {
@@ -11153,6 +11326,7 @@ a.text-dark:focus {
 
   .masthead .masthead-subheading {
     font-size: 1.5rem;
+    font-family: 'SB Body' !important;
   }
 }
 
@@ -11260,6 +11434,9 @@ form .row:first-child .floating-label-form-group {
 }
 
 .footer {
+  position: relative;
+  top: -100px;
+  height: 50px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: #7ebcff;
@@ -11269,6 +11446,17 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #4ba2ff;
 }
+
+.copyright2 {
+  background-color: #4ba2ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  right: 0px;
+  left: 0px;
+}
+
+
 
 #brandImage {
   height: 2rem;

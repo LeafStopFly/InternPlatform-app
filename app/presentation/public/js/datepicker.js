@@ -4,8 +4,5 @@ $(function () {
         // changeYear: true,
         // showButtonPanel: true,
         dateFormat: 'yy / mm / dd',
-
     });
-
 });
-

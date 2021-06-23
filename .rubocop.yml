@@ -23,10 +23,37 @@ Security/YAMLLoad:
 Style/HashSyntax:
   Enabled: true
   Exclude:
-    - Rakefile
+    - Rakefile.rb
 
 Style/SymbolArray:
   Enabled: true
   Exclude:
     - db/migrations/**/*
-    - Rakefile
+    - Rakefile.rb
+
+Style/IfUnlessModifier:
+  Enabled: true
+  Exclude:
+    - app/forms/auth.rb
+
+Style/RedundantFreeze:
+  Enabled: true
+  Exclude:
+    - app/forms/form_base.rb
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+  Exclude:
+    - app/forms/form_base.rb
+
+Metrics/AbcSize:
+  Enabled: true
+  Exclude:
+    - app/models/internship.rb
+    - app/models/interview.rb
+
+Metrics/MethodLength:
+  Enabled: true
+  Exclude:
+    - app/models/internship.rb
+    - app/models/interview.rb

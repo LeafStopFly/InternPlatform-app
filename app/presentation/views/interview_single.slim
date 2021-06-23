@@ -1,0 +1,165 @@
+/ !-- Core theme JS-->
+script src="/js/scripts.js"
+
+title InterviewSharing
+
+<header class="page-section bg-white text-primary text-center">
+  <div class="container d-flex align-items-center flex-column" id="page-top">
+    <!-- Masthead Heading-->
+    <h1 class="masthead-heading mb-0">INTERVIEW SHARING</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    h1 class="text-center text-uppercase text-primary mb-0"="#{interview.position}"
+    h5 class="text-center text-uppercase text-secondary mb-0"="#{interview.author}"
+    h5 class="text-center text-uppercase text-secondary mb-0"="#{interview.iss_module}"
+    </div>
+  </div>  
+</header>
+
+
+<nav class="postnav navbar navbar-expand-lg bg-secondary fixed-bottom" id="mainNav">
+  <div class="container">
+    a class="navbar-brand js-scroll-trigger" href="#page-top" ="#{interview.position}"
+    ul class="navbar-nav ml-auto"
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#info">INFO</a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#des">DESCRIPTION</a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#adivce">ADVICE</a>
+      </li>
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#result">RESULT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-section bg-primary " id="info">
+  <div class="container">
+      <!-- Portfolio Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading text-white text-uppercase mb-0 d-inline-block"><br>Interview Information</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <!-- Portfolio Grid Items-->
+      <div class="row justify-content-center mx-3">
+          <!-- Portfolio Items-->
+          <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Company
+            h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.company_name}"
+          </div>
+          <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Position
+              h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.position}"
+          </div>
+          <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Date
+              h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.time}"
+          </div>
+          <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Location
+              h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.interview_location}"
+          </div>
+          <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Recruit Source
+              h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.recruit_source}"
+          </div>    
+      </div>
+  </div>
+</section>
+
+<section class="page-section bg-secondary text-white mb-0" id="des">
+  <div class="container d-flex flex-column">
+      <!-- About Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">INTERVIEW DESCRIPTION</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      h4 class="homepage" #{interview.description}
+  </div>
+</section>  
+
+<section class="page-section bg-primary text-white mb-0" id="adivce">
+  <div class="container d-flex flex-column">
+      <!-- About Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">ADVICE</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      h4 class="homepage" #{interview.advice}
+  </div>
+</section>
+
+<section class="page-section bg-secondary text-white mb-0" id="result">
+  <div class="container">
+      <!-- About Section Heading-->
+      <div class="text-center">
+          <h2 class="page-section-heading d-inline-block text-white">INTERVIEW RESULT</h2>
+      </div>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <div class="row justify-content-center mx-3">
+        <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Result
+          h2 class="jobsimple2 text-uppercase mb-0" ="#{interview.result}"
+        </div>
+        <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Time for Result
+          h2 class="jobsimple2 text-uppercase mb-0" ="#{interview.waiting_result_time}"
+        </div>
+      </div>
+      <div class="row justify-content-center mx-3">
+        <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Difficulty
+          h2 class="jobsimple2 text-uppercase mb-0" #{interview.level}
+        </div>
+        <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Rating
+          h2 class="jobsimple2 text-uppercase mb-0" <i class="fas fa-star"></i> #{interview.rating}
+          / h2 class="jobsimple2 text-uppercase mb-0" 
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+          /   <label for="rc1" class="rating__item">
+          /     <svg class="rating__star">
+          /       <use xlink:href="#star"></use>
+          /     </svg>
+          /     <span class="screen-reader"></span>
+          /   </label>
+      </div>
+  </div>
+</section>

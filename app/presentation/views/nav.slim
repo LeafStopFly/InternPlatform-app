@@ -1,43 +1,18 @@
-/ link rel="stylesheet" href="../css/styles.css"
-
-/ / !-- Core theme JS-->
-/ script src="../js/scripts.js"
-
-/ / !-- Fonts CSS-->
-/ link href="../css/heading.css" rel="stylesheet"
-/ link href="../css/body.css" rel="stylesheet"
-
-
-
 <nav class="navbar navbar-expand-lg bg-secondary" id="mainNav">
   <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">ISS INTERNSHIP</a>
-    <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+    <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">MENU <i class="fas fa-bars"></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       ul class="navbar-nav ml-auto"
         li class="nav-item dropdown"
           a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
             = "BLOG"
-
           div class=-"dropdown-menu"
             a class="dropdown-item" href="/internships/" INTERNSHIP SHARING
             a class="dropdown-item" href='/interviews/' INTERVIEW SHARING
-        / li class="nav-item mx-0 mx-lg-1"
-        /   a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/login' INTERNSHIP
-        / li class="nav-item mx-0 mx-lg-1"
-        /   a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='#about' INTERVIEW
         li class="nav-item mx-0 mx-lg-1"
           a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/companies/' COMPANY
-        /li class="nav-item mx-0 mx-lg-1"
-          a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='#about' ABOUT
-    
 
         - if @current_account.logged_in?
-          div class="br-icon"
-            ul 
-              li INTERNSHIP
-              li INTERVIEW
-          
-
           li class="nav-item mx-0 mx-lg-1"
             a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/mypost/" MY POST
 
@@ -48,14 +23,12 @@
               a class="dropdown-item" href='/share/interview'SHARE INTERVIEW
 
           li class="nav-item dropdown"
-            a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
               = "#{@current_account.username}"
 
             div class=-"dropdown-menu"
               a class="dropdown-item" href="/account/#{@current_account.username}" ACCOUNT
               a class="dropdown-item" href='/auth/logout'LOGOUT
-    
-
         - else
           li class="nav-item dropdown"
             a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
@@ -64,14 +37,6 @@
             div class=-"dropdown-menu"
               a class="dropdown-item" href="/auth/login" LOGIN
               a class="dropdown-item" href='/auth/register' REGISTER
-
-          
-
-          /li class="nav-item mx-0 mx-lg-1"
-            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/login' LOGIN
-          /li class="nav-item mx-0 mx-lg-1"
-            a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href='/auth/register' REGISTER
     </div>
   </div>
 </nav>
-

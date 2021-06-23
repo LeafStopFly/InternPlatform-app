@@ -4,7 +4,6 @@ require 'delegate'
 require 'roda'
 require 'figaro'
 require 'logger'
-require 'rack/ssl-enforcer'
 require 'rack/session/redis'
 require_relative '../require_app'
 
@@ -21,13 +20,13 @@ module ISSInternship
       path: File.expand_path('config/secrets.yml')
     )
     Figaro.load
-    def self.config()
+    def self.config
       Figaro.env
     end
 
     # Logger setup
     LOGGER = Logger.new($stderr)
-    def self.logger()
+    def self.logger
       LOGGER
     end
 
@@ -36,13 +35,14 @@ module ISSInternship
     configure do
       SecureSession.setup(ENV['REDIS_TLS_URL']) # REDIS_URL used again below
       SecureMessage.setup(ENV.delete('MSG_KEY'))
+      SignedMessage.setup(config)
     end
 
     configure :production do
-      use Rack::SslEnforcer, hsts: true
-
       use Rack::Session::Redis,
           expire_after: ONE_MONTH,
+          httponly: true,
+          same_site: :strict,
           redis_server: {
             url: ENV.delete('REDIS_TLS_URL'),
             ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE }
@@ -58,8 +58,10 @@ module ISSInternship
 
       # use Rack::Session::Redis,
       #     expire_after: ONE_MONTH,
+      #     httponly: true,
+      #     same_site: :strict,
       #     redis_server: {
-      #       url: ENV.delete('REDIS_URL'),
+      #       url: ENV.delete('REDIS_URL')
       #     }
     end
 
