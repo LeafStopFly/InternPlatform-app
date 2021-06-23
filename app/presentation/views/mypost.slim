@@ -1,51 +1,7 @@
 / !-- Fonts & ICON CSS-->
-script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
-
-javascript:
-  function DeleteInternship(id, title) {
-    console.log("/internships/"+id+"/delete")
-
-    $.ajax({
-      type:"POST",
-      url:"/internships/"+id+"/delete",
-      dataType:"json",
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      data: {intern_id: id},
-      success:function(result){
-          alert(result);
-        },
-      error:function(result){
-        console.log(result);
-        window.location = result.responseText;
-      }
-    });
-  }
-
-  function DeleteInterview(id, title) {
-    console.log("/interviews/"+id+"/delete")
-
-    $.ajax({
-      type:"POST",
-      url:"/interviews/"+id+"/delete",
-      dataType:"json",
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      data: {interv_id: id},
-      success:function(result){
-          alert(result);
-        },
-      error:function(result){
-        console.log(result);
-        window.location = result.location;
-      }
-    });
-  }
+/ script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
 
 title MyPost
-
 
 <header class="masthead bg-primary text-white text-center">
   <div class="container d-flex align-items-center flex-column">

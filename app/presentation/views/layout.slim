@@ -2,7 +2,7 @@ doctype html
 html
   head
     / title ISSInternship
-    link rel="shortcut icon" href="img/avataaars.ico"
+    link rel="shortcut icon" href="/img/avataaars.ico"
 
     / Themed Bootstrap CSS (Cerulean Theme) - see bootswatch.com for more themes
     / - default Bootstrap CSS: https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css
@@ -19,8 +19,22 @@ html
     / !-- Fonts CSS-->
     link href="/css/heading.css" rel="stylesheet"
     link href="/css/body.css" rel="stylesheet" 
+    script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
+
     / Custom CSS
     / == assets(:css)
+    / !-- Post JS-->
+    script src="/js/post.js"
+    script src="/js/post_v.js"
+
+    / !-- DATEPICKER-->
+    link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    script src="https://code.jquery.com/jquery-1.12.4.js"
+    script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    script src="/js/datepicker.js"
+    link href="/css/monthpicker.css" rel="stylesheet"
+    / link href="/css/datepicker.css" rel="stylesheet"
+
 
     / !-- RATINGSTAR JS-->
     link href="/css/ratingstar.css" rel="stylesheet"
@@ -34,7 +48,6 @@ html
     / !-- SELECTBOX -->
     link href="/css/select.box.css" rel="stylesheet"
     script src="/js/select.box.js"
-
     link href="/css/posts.css" rel="stylesheet"
   body
     / Popper & Bootstrap Javascript (Load in this order)

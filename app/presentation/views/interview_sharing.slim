@@ -1,18 +1,3 @@
-/ !-- Core theme JS & CSS-->
-script src="../js/scripts.js"
-link rel="stylesheet" href="../css/styles.css"
-
-
-/ !-- Fonts & ICON CSS-->
-link href="../css/heading.css" rel="stylesheet"
-link href="../css/body.css" rel="stylesheet"
-script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
-
-/ !-- SELECTBOX -->
-link href="../css/select.box.css" rel="stylesheet"
-script src="../js/select.box.js"
-link href="../css/posts.css" rel="stylesheet"
-
 title InterviewSharing
 
 <header class="masthead bg-primary text-white text-center">
@@ -30,33 +15,33 @@ title InterviewSharing
   </div>
 </header>
 
-<section class="ccarea portfolio" id="portfolio">
-/ <div class="container">
-/     <!-- Portfolio Section Heading-->
-/     <div class="text-center">
-/       <h2 class="page-section-heading text-secondary mb-0 d-inline-block">INTERNSHIP SHARING</h2>
+/ <section class="ccarea portfolio" id="portfolio">
+/ / <div class="container">
+/ /     <!-- Portfolio Section Heading-->
+/ /     <div class="text-center">
+/ /       <h2 class="page-section-heading text-secondary mb-0 d-inline-block">INTERNSHIP SHARING</h2>
+/ /     </div>
+
+/ <div class="sidebar-box">
+/   <form action="#" class="search-form">
+/     <div class=" mx-auto form-group">
+/       <span class="icon ion-ios-search"></span>
+/       <input type="text" class="form-control" placeholder="Search...">
 /     </div>
+/   </form>
+/ </div>
 
-<div class="sidebar-box">
-  <form action="#" class="search-form">
-    <div class=" mx-auto form-group">
-      <span class="icon ion-ios-search"></span>
-      <input type="text" class="form-control" placeholder="Search...">
-    </div>
-  </form>
-</div>
-
-<div class="select-box">
-  <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
-  <select id="select-box5" class="select">
-    <option value="Choice 1"></option>
-    <option value="Choice 1">Information Systems (IS)</option>
-    <option value="Choice 2">Service Marketing and Management</option>
-    <option value="Choice 3">Service Innovation and Design</option>
-    <option value="Choice 4">Business Analytics</option>
-  </select>
-</div>
-</section>
+/ <div class="select-box">
+/   <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
+/   <select id="select-box5" class="select">
+/     <option value="Choice 1"></option>
+/     <option value="Choice 1">Information Systems (IS)</option>
+/     <option value="Choice 2">Service Marketing and Management</option>
+/     <option value="Choice 3">Service Innovation and Design</option>
+/     <option value="Choice 4">Business Analytics</option>
+/   </select>
+/ </div>
+/ </section>
 
 section#sec-1a5a.u-clearfix.u-section-1
   .u-clearfix.u-sheet.u-sheet-1
@@ -65,7 +50,7 @@ section#sec-1a5a.u-clearfix.u-section-1
         - interviews.all.each do |interv|
           .u-border-3.u-border-custom-color-1.u-container-style.u-list-item.u-repeater-item.u-list-item-1
             .u-container-layout.u-similar-container.u-container-layout-1
-              h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{interv.company_name} 
+              h3.u-align-left.u-text.u-text-custom-color-1.u-text-1 #{interv.position} 
               .u-align-center.u-blog-control.u-metadata.u-metadata-1
                 span.u-meta-author.u-meta-icon #{interv.author}
                 span.u-meta-date.u-meta-icon #{interv.time} 

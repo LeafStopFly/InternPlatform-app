@@ -11293,6 +11293,14 @@ a.text-dark:focus {
   margin-right: 10%;
   text-align: justify;
 }
+
+.postpage{
+  font-size: 1.25rem;
+  margin-left: 40%;
+  margin-right: 40%;
+  text-align: justify;
+}
+
 .masthead .masthead-subheading {
   font-size: 1.25rem;
   font-family: 'SB Body' !important;
