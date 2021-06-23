@@ -1,3 +1,9 @@
+/ !-- DATEPICKER-->
+link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+script src="/js/monthpicker.js"
+link href="/css/monthpicker.css" rel="stylesheet"
+
 javascript:
   function searchComp(id) {
     var comp_no = document.getElementById(id).value;
@@ -63,7 +69,7 @@ title EditInternship
                     </div>
 
                     /time
-                    <div class="date-picker">
+                    <div class="">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label for="editDate">Start Date</label>
                         input class="date-picker" name="year" id="editDate" required="required" value="#{internship.year}"
@@ -191,6 +197,7 @@ title EditInternship
                         <span class="page__hint">Rating</span>
                       </div>
                     </div>
+
                     /Anonymous
                     <div class="control-group">
                       <label for="" class="label-desc">Anonymous</label>
@@ -215,4 +222,3 @@ title EditInternship
             </div>
         </div>
     </div>
-  

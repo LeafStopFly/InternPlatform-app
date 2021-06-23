@@ -1,3 +1,9 @@
+/ !-- DATEPICKER-->
+link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+script src="https://code.jquery.com/jquery-1.12.4.js"
+script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+script src="../js/datepicker.js"
+
 javascript:
   function searchComp(id) {
     var comp_no = document.getElementById(id).value;
@@ -19,7 +25,6 @@ javascript:
 
 title PostInterview
 
-
 <section class="page-section" id="contact">
   <div class="container">
       h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "#{@current_account.username}"
@@ -36,9 +41,8 @@ title PostInterview
 
                   <div class="sentMessage">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                          <label>Position</label>
-                          <input class="form-control" name="position" type="text" placeholder="Position" required="required" data-validation-required-message="Please enter the title." />
-                          /<p class="help-block text-danger"></p>
+                          <label>Interview Position</label>
+                          <input class="form-control" name="position" type="text" placeholder="Interview Position" required="required" data-validation-required-message="Please enter the title." />
                       </div>
                   </div>
 
@@ -62,14 +66,14 @@ title PostInterview
                   <div class="date-picker">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Interview Date</label>
-                      <input class="form-control" id="datepicker" name="time" type="text" placeholder="Inerview Date" required="required" data-validation-required-message="Please enter the Date." />
+                      <input class="form-control" id="datepicker" name="time" type="text" placeholder="Interview Date" required="required" data-validation-required-message="Please enter the Date." />
                     </div>
                   </div>
                   
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                          <label>Interview location</label>
-                          <input class="form-control" name="interview_location" type="tel" placeholder="Interview location" required="required" />
+                          <label>Interview Location</label>
+                          <input class="form-control" name="interview_location" type="tel" placeholder="Interview Location" required="required" />
                           /<p class="help-block text-danger"></p>
                       </div>
                   </div>
@@ -85,8 +89,6 @@ title PostInterview
                       <option value="Business Analytics">Business Analytics</option>
                     </select>
                   </div>
-
-                  /time
 
                   /recruit_source
                   <div class="select-box">
@@ -107,7 +109,7 @@ title PostInterview
                   /description
                   <div class="control-group">
                       <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                          <label>Description</label>
+                          <label>Interview Description</label>
                           <textarea class="form-control" name="description" rows="5" placeholder="Interview Description" required="required" data-validation-required-message="Please enter job description."></textarea>
                           /<p class="help-block text-danger"></p>
                       </div>
@@ -122,9 +124,9 @@ title PostInterview
                       </div>
                   </div>
 
-                  /Wating result time
+                  /Waiting result time
                   <div class="select-box">
-                    <label for="select-box4" class="label select-box4"><span class="label-desc">Wating result time</span> </label>
+                    <label for="select-box4" class="label select-box4"><span class="label-desc">Waiting result time</span> </label>
                     <select id="select-box4" class="select" name="waiting_result_time">
                       <option value="">Choose here</option>
                       <option value="3 days">3 days</option>
@@ -232,9 +234,10 @@ title PostInterview
                       <span class="page__hint">Rating</span>
                     </div>
                   </div>
+
                   /Anonymous
                   <div class="control-group">
-                    <label for="" class="label-desc">Anonymous</label>
+                    <label class="page__hint">Anonymous</label>
                     <div class="col-sm-10">
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="non_anonymous" id="gridRadios1" value="False">
@@ -248,12 +251,10 @@ title PostInterview
                   </div>
                   <br />
                   
-                  <div id="success"></div>
                   button type='submit' id='sendMessageButton' value='post' class="btn btn-primary btn-block" POST
                   br
-                  button type='submit' id='sendMessageButton' href="/mypost" class="btn btn-primary btn-block" Cancel
+                  a type="button" class="btn btn-primary btn-block" href="/mypost" Cancel
               </form>
           </div>
       </div>
   </div>
-  

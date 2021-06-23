@@ -1,6 +1,3 @@
-/ !-- Fonts & ICON CSS-->
-/ script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
-
 title MyPost
 
 <header class="masthead bg-primary text-white text-center">
@@ -16,24 +13,17 @@ title MyPost
   </div>
 </header>
 
+/ <section class="ccarea portfolio" id="portfolio">
+/ <div class="select-box">
+/   <label for="select-box6" class="label select-box6"><span class="label-desc">INTERSHIP OR INTERVIEW</span> </label>
+/   <select id="select-box6" class="select">
+/     <option value="Choice 1">INTERNSHIP SHARING POST</option>
+/     <option value="Choice 2">INTERVIEW SHARING POST</option>
+/   </select>
+/ </div>
+/ </section>
 
-<section class="page-section portfolio" id="portfolio">
-/ <div class="container">
-/     <!-- Portfolio Section Heading-->
-/     <div class="text-center">
-/       <h2 class="page-section-heading text-secondary mb-0 d-inline-block">INTERNSHIP SHARING</h2>
-/     </div>
-
-<section class="ccarea portfolio" id="portfolio">
-
-<div class="select-box">
-  <label for="select-box6" class="label select-box6"><span class="label-desc">INTERSHIP OR INTERVIEW</span> </label>
-  <select id="select-box6" class="select">
-    <option value="Choice 1">INTERNSHIP SHARING POST</option>
-    <option value="Choice 2">INTERVIEW SHARING POST</option>
-  </select>
-</div>
-</section>
+br
 h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" = "Internship"
 section#sec-1a5a.u-clearfix.u-section-1
   .u-clearfix.u-sheet.u-sheet-1
@@ -50,9 +40,6 @@ section#sec-1a5a.u-clearfix.u-section-1
                 form action="/internships/#{intern.id}/delete" method="POST" role="form" class="form-horizontal"
                   button type='submit' class="btndel divider-custom-icon" style="color: #ffc4bf;"
                     i class="fas fa-trash-alt fa-lg"
-                  / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-trash-alt fa-lg"> </i> </span>  
-                / <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                / span.u-meta-date.u-meta-icon #{intern.year}
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
               p.u-align-justify-md.u-align-justify-sm.u-align-justify-xs.u-text.u-text-2 #{intern.reactionary}
               a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="../internships/#{intern.id}"  read more
@@ -73,8 +60,6 @@ section#sec-1a5a.u-clearfix.u-section-1
                 form action="/interviews/#{interv.id}/delete" method="POST" role="form" class="form-horizontal"
                   button type='submit' class="btndel divider-custom-icon" style="color: #ffc4bf;"
                     i class="fas fa-trash-alt fa-lg"
-                / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-edit fa-lg"> </i> </span>
-                / <span class="divider-custom-icon" style="color: #ffc4bf;"> <i class="fas fa-trash-alt fa-lg"> </i> </span>
               .u-border-7.u-border-custom-color-1.u-expanded-width.u-line.u-line-horizontal.u-line-1
               p.u-align-justify-md.u-align-justify-sm.u-align-justify-xs.u-text.u-text-2 #{interv.description}
               a.u-align-center.u-border-1.u-border-black.u-border-hover-custom-color-1.u-btn.u-btn-rectangle.u-button-style.u-none.u-text-body-color.u-text-hover-custom-color-1.u-btn-1 href="../interviews/#{interv.id}"  read more

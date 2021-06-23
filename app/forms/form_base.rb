@@ -9,7 +9,6 @@ module ISSInternship
     EMAIL_REGEX = /@/.freeze
     TITLE_REGEX = %r{^((?![&\/\\\{\}\|\t]).)*$}.freeze
     COMPNUM_REGEX = /[0-9]{8}/.freeze
-    # PATH_REGEX = /^((?![&\{\}\|\t]).)*$/.freeze
 
     def self.validation_errors(validation)
       validation.errors.to_h.map { |k, v| [k, v].join(' ') }.join('; ')

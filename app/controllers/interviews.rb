@@ -16,7 +16,6 @@ module ISSInternship
           routing.on 'edit' do
             # GET /interviews/[interv_id]/edit
             routing.get do
-              
               interv_info = GetInterview.new(App.config).call(
                 @current_account, interv_id
               )
@@ -67,9 +66,9 @@ module ISSInternship
           # Edit
           # POST /interviews/[interv_id]
           routing.post do
-            routing.params['level']=routing.params['rating-star']
-            routing.params['rating']=routing.params['rating2-star'].to_f
-            
+            routing.params['level'] = routing.params['rating-star']
+            routing.params['rating'] = routing.params['rating2-star'].to_f
+
             new_data = Form::NewInterview.new.call(routing.params)
             if new_data.failure?
               flash[:error] = Form.message_values(new_data)
@@ -91,7 +90,7 @@ module ISSInternship
 
         # GET /interviews/
         routing.get do
-          interview_list = GetAllInterviews.new(App.config).call(@current_account)
+          interview_list = GetAllInterviews.new(App.config).call
 
           interviews = Interviews.new(interview_list)
 
@@ -104,8 +103,8 @@ module ISSInternship
         routing.post do
           routing.redirect '/auth/login' unless @current_account.logged_in?
 
-          routing.params['level']=routing.params['rating-star']
-          routing.params['rating']=routing.params['rating2-star'].to_f
+          routing.params['level'] = routing.params['rating-star']
+          routing.params['rating'] = routing.params['rating2-star'].to_f
           interview_data = Form::NewInterview.new.call(routing.params)
           if interview_data.failure?
             flash[:error] = Form.message_values(interview_data)

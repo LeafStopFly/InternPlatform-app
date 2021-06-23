@@ -11,7 +11,6 @@ module ISSInternship
 
     def initialize(intern_info)
       process_attributes(intern_info['attributes'])
-      # process_relationships(intern_info['relationships'])
       process_policies(intern_info['policies'])
     end
 
@@ -34,28 +33,8 @@ module ISSInternship
       @author = attributes['author']
     end
 
-    # def process_relationships(relationships)
-    #   return unless relationships
-
-    #   @owner = Account.new(relationships['owner'])
-    #   @collaborators = process_collaborators(relationships['collaborators'])
-    #   @documents = process_documents(relationships['documents'])
-    # end
-
     def process_policies(policies)
       @policies = OpenStruct.new(policies)
     end
-
-    # def process_documents(documents_info)
-    #   return nil unless documents_info
-
-    #   documents_info.map { |doc_info| Document.new(doc_info) }
-    # end
-
-    # def process_collaborators(collaborators)
-    #   return nil unless collaborators
-
-    #   collaborators.map { |account_info| Account.new(account_info) }
-    # end
   end
 end

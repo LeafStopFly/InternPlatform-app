@@ -20,13 +20,13 @@ module ISSInternship
       path: File.expand_path('config/secrets.yml')
     )
     Figaro.load
-    def self.config()
+    def self.config
       Figaro.env
     end
 
     # Logger setup
     LOGGER = Logger.new($stderr)
-    def self.logger()
+    def self.logger
       LOGGER
     end
 

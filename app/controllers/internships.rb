@@ -8,7 +8,6 @@ module ISSInternship
   class App < Roda
     route('internships') do |routing|
       routing.on do
-        
         @internships_route = '/internships'
 
         routing.on(String) do |intern_id|
@@ -17,7 +16,6 @@ module ISSInternship
           routing.on 'edit' do
             # GET /internships/[intern_id]/edit
             routing.get do
-              
               intern_info = GetInternship.new(App.config).call(
                 @current_account, intern_id
               )
@@ -67,7 +65,7 @@ module ISSInternship
           # Edit
           # POST /internships/[intern_id]
           routing.post do
-            routing.params['rating']=routing.params['rating-star'].to_f
+            routing.params['rating'] = routing.params['rating-star'].to_f
 
             new_data = Form::NewInternship.new.call(routing.params)
             if new_data.failure?
@@ -90,7 +88,7 @@ module ISSInternship
 
         # GET /internships/
         routing.get do
-          internship_list = GetAllInternships.new(App.config).call(@current_account)
+          internship_list = GetAllInternships.new(App.config).call
 
           internships = Internships.new(internship_list)
           view :internship_sharing, locals: {
@@ -100,7 +98,7 @@ module ISSInternship
 
         # POST /internships/
         routing.post do
-          routing.params['rating']=routing.params['rating-star'].to_f
+          routing.params['rating'] = routing.params['rating-star'].to_f
 
           internship_data = Form::NewInternship.new.call(routing.params)
           if internship_data.failure?

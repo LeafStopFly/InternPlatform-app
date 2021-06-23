@@ -1,8 +1,7 @@
-/ !-- Fonts & ICON CSS-->
-/ script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"
+/ !-- Core theme JS-->
+script src="/js/scripts.js"
 
 title InterviewSharing
-
 
 <header class="page-section bg-white text-primary text-center">
   <div class="container d-flex align-items-center flex-column" id="page-top">
@@ -42,7 +41,7 @@ title InterviewSharing
   <div class="container">
       <!-- Portfolio Section Heading-->
       <div class="text-center">
-          <h2 class="page-section-heading text-white text-uppercase mb-0 d-inline-block"><br>Interview Infomation</h2>
+          <h2 class="page-section-heading text-white text-uppercase mb-0 d-inline-block"><br>Interview Information</h2>
       </div>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
@@ -67,15 +66,13 @@ title InterviewSharing
           </div>
           <div class="interviewinfo col-md-6 col-lg-4 mb-5 text-center">Recruit Source
               h2 class="interviewinfo2 text-uppercase mb-0" ="#{interview.recruit_source}"
-          </div>
-          
+          </div>    
       </div>
-      
   </div>
 </section>
 
 <section class="page-section bg-secondary text-white mb-0" id="des">
-  <div class="container d-flex align-items-center flex-column">
+  <div class="container d-flex flex-column">
       <!-- About Section Heading-->
       <div class="text-center">
           <h2 class="page-section-heading d-inline-block text-white">INTERVIEW DESCRIPTION</h2>
@@ -86,12 +83,12 @@ title InterviewSharing
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
       </div>
-      h4 class="postpage"="#{interview.description}"
+      h4 class="homepage" #{interview.description}
   </div>
 </section>  
 
 <section class="page-section bg-primary text-white mb-0" id="adivce">
-  <div class="container d-flex align-items-center flex-column">
+  <div class="container d-flex flex-column">
       <!-- About Section Heading-->
       <div class="text-center">
           <h2 class="page-section-heading d-inline-block text-white">ADVICE</h2>
@@ -102,7 +99,7 @@ title InterviewSharing
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
       </div>
-      h4 class="postpage"="#{interview.advice}" 
+      h4 class="homepage" #{interview.advice}
   </div>
 </section>
 
@@ -129,37 +126,6 @@ title InterviewSharing
       <div class="row justify-content-center mx-3">
         <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Difficulty
           h2 class="jobsimple2 text-uppercase mb-0" #{interview.level}
-          / h2 class="jobsimple2 text-uppercase mb-0" 
-            / <label for="rc1" class="rating__item">
-            /   <svg class="rating__star">
-            /     <use xlink:href="#star"></use>
-            /   </svg>
-            /   <span class="screen-reader"></span>
-            / </label>
-            / <label for="rc1" class="rating__item">
-            /   <svg class="rating__star">
-            /     <use xlink:href="#star"></use>
-            /   </svg>
-            /   <span class="screen-reader"></span>
-            / </label>
-            / <label for="rc1" class="rating__item">
-            /   <svg class="rating__star">
-            /     <use xlink:href="#star"></use>
-            /   </svg>
-            /   <span class="screen-reader"></span>
-            / </label>
-            / <label for="rc1" class="rating__item">
-            /   <svg class="rating__star">
-            /     <use xlink:href="#star"></use>
-            /   </svg>
-            /   <span class="screen-reader"></span>
-            / </label>
-            / <label for="rc1" class="rating__item">
-            /   <svg class="rating__star">
-            /     <use xlink:href="#star"></use>
-            /   </svg>
-            /   <span class="screen-reader"></span>
-            / </label>
         </div>
         <div class="jobsimple col-md-6 col-lg-4 mb-5 text-center">Rating
           h2 class="jobsimple2 text-uppercase mb-0" <i class="fas fa-star"></i> #{interview.rating}
@@ -195,24 +161,5 @@ title InterviewSharing
           /     <span class="screen-reader"></span>
           /   </label>
       </div>
-          
   </div>
 </section>
-
-
-
-<section class="page-section bg-secondary text-white mb-0" id="blank">
-  <div class="container">
-      / <div class="text-center">
-          <h2 class="page-section-heading d-inline-block text-white"></h2>
-      </div>
-  </div>
-</section>
-
-
-
-
-
-
-/ <section class="copyright py-4 text-center text-white">
-  <div class="container"><small class="pre-wrap">Copyright © LeafStopFly 2021 </small></div>

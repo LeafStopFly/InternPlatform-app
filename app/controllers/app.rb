@@ -22,7 +22,7 @@ module ISSInternship
       routing.multi_route
 
       # GET /
-      routing.root do        
+      routing.root do
         view 'home', locals: {
           current_account: @current_account
         }
