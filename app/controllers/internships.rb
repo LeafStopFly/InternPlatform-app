@@ -89,16 +89,19 @@ module ISSInternship
         # GET /internships/
         routing.get do
 
-          iss_module = routing.params['iss_module']
+          iss_m= routing.params['iss_module']
           internship_list = 
-            if iss_module.nil? || iss_module == ""
+            if iss_m.nil? || iss_m == ""
+              iss_m=""
               GetAllInternships.new(App.config).call
             else
-              GetAllInternships.new(App.config).call_issmodule(iss_module)
+              interns = GetAllInternships.new(App.config).call_issmodule(iss_m)
+              iss_m=ISSModule.transform(iss_m)
+              interns
             end
           internships = Internships.new(internship_list)
           view :internship_sharing, locals: {
-            current_user: @current_account, internships: internships
+            current_user: @current_account, internships: internships, iss_m: iss_m
           }
         end
 

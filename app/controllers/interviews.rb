@@ -90,12 +90,20 @@ module ISSInternship
 
         # GET /interviews/
         routing.get do
-          interview_list = GetAllInterviews.new(App.config).call
-
+          iss_m= routing.params['iss_module']
+          interview_list = 
+            if iss_m.nil? || iss_m == ""
+              iss_m=""
+              GetAllInterviews.new(App.config).call
+            else
+              interns = GetAllInterviews.new(App.config).call_issmodule(iss_m)
+              iss_m=ISSModule.transform(iss_m)
+              interns
+            end
           interviews = Interviews.new(interview_list)
 
           view :interview_sharing, locals: {
-            current_user: @current_account, interviews: interviews
+            current_user: @current_account, interviews: interviews, iss_m: iss_m
           }
         end
 
