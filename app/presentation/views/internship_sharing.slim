@@ -15,7 +15,7 @@ title InternshipSharing
   </div>
 </header>
 
-/ <section class="ccarea portfolio" id="portfolio">
+<section class="ccarea portfolio" id="portfolio">
 / / <div class="container">
 / /     <!-- Portfolio Section Heading-->
 / /     <div class="text-center">
@@ -30,18 +30,29 @@ title InternshipSharing
 /     </div>
 /   </form>
 / </div>
-
-/ <div class="select-box">
-/   <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
-/   <select id="select-box5" class="select">
-/     <option value="Choice 1"></option>
-/     <option value="Choice 1">Information Systems (IS)</option>
-/     <option value="Choice 2">Service Marketing and Management</option>
-/     <option value="Choice 3">Service Innovation and Design</option>
-/     <option value="Choice 4">Business Analytics</option>
-/   </select>
-/ </div>
-/ </section>
+form role="form" action="/internships" method='GET' id="module"
+  div class="align-items-center form-inline text-center d-flex justify-content-center"
+    div class="col-md-10"
+      <div class="select-box">
+        <label for="select-box5" class="label select-box5"><span class="label-desc">Module</span> </label>
+        <select id="select-box5" class="select" name="iss_module" form="module">
+          <option value=""></option>
+          <option value="Information%20Systems%20(IS)">Information Systems (IS)</option>
+          <option value="Service%20Marketing%20and%20Management">Service Marketing and Management</option>
+          <option value="Service%20Innovation%20and%20Design">Service Innovation and Design</option>
+          <option value="Business%20Analytics">Business Analytics</option>
+        </select>
+      </div>
+    div class="col-auto"
+      button type='submit' value='post' class="btn btn-primary"
+        i class="fa fa-search"
+</section>
+div class="align-items-center form-inline text-center d-flex justify-content-center"
+  .col
+    h3 class="text-primary"
+      - if iss_m != ''
+        span
+          = iss_m
 
 section#sec-1a5a.u-clearfix.u-section-1
   .u-clearfix.u-sheet.u-sheet-1

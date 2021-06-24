@@ -1,0 +1,12 @@
+div class="container" style="margin-top: 10%"
+  div class="row"
+    div class="col-sm-4"
+    div class="col-sm-4"
+      h3 class="text-center text-secondary" Reset Password
+      label class="text-secondary" Enter your email address below and we'll send you a link to reset your password.
+      form action='/auth/resetpwd' method='post' id='register-form'
+        div class="form-group floating-label-form-group controls mb-0 pb-2"
+          label Email address
+          input type='tel' name='email' placeholder='email address' class="form-control"
+        button type='submit' id='registration-start-form-submit' class='submit' value='submit' class="btn btn-primary btn-block" Submit
+    div class="col-sm-4"
