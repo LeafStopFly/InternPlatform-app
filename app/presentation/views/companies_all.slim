@@ -11,13 +11,13 @@ div class="allcompany text-center"
     thead
       tr
         th Company name
-        th 統一編號
+        th tax ID number
         th Address
     tbody
       - companies.all.each do |comp|
         tr
           td 
-            a href="/#{comp.id}" #{comp.name}
+            p class="text-secondary" #{comp.name}
           td 
             p #{comp.company_no}
           td
