@@ -8,7 +8,6 @@ module ISSInternship
   class App < Roda
     route('account') do |routing|
       routing.on do
-
         # POST /account/resetpwd/<resetpwd_token>
         routing.on 'resetpwd' do
           routing.post String do |resetpwd_token|

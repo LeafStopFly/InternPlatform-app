@@ -31,6 +31,11 @@ Style/SymbolArray:
     - db/migrations/**/*
     - Rakefile.rb
 
+Naming/FileName:
+  Enabled: true
+  Exclude:
+    - Rakefile.rb
+
 Style/IfUnlessModifier:
   Enabled: true
   Exclude:
@@ -57,3 +62,13 @@ Metrics/MethodLength:
   Exclude:
     - app/models/internship.rb
     - app/models/interview.rb
+
+Metrics/ClassLength:
+  Enabled: true
+  Exclude:
+    - app/controllers/*
+
+Style/HashLikeCase:
+  Enabled: true
+  Exclude:
+    - app/services/transform_module.rb

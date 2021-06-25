@@ -26,6 +26,7 @@ gem 'secure_headers'
 # Debugging
 gem 'pry'
 gem 'rack-test'
+gem 'simplecov'
 
 # Development
 group :development do

@@ -146,7 +146,6 @@ module ISSInternship
               flash[:error] = Form.validation_errors(resetpwd)
               routing.redirect @resetpwd_route
             end
-            account_data = JsonRequestBody.symbolize(routing.params)
             VerifyResetPassword.new(App.config).call(resetpwd.to_h)
 
             flash[:notice] = 'Please check your email for a verification link'
@@ -169,7 +168,7 @@ module ISSInternship
           action_route = "/account/resetpwd/#{resetpwd_token}"
 
           view :resetpwd_confirm, locals: { account: account,
-                                           action_route: action_route}
+                                            action_route: action_route }
         end
       end
     end
