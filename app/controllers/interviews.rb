@@ -90,14 +90,14 @@ module ISSInternship
 
         # GET /interviews/
         routing.get do
-          iss_m= routing.params['iss_module']
-          interview_list = 
-            if iss_m.nil? || iss_m == ""
-              iss_m=""
+          iss_m = routing.params['iss_module']
+          interview_list =
+            if iss_m.nil? || iss_m == ''
+              iss_m = ''
               GetAllInterviews.new(App.config).call
             else
               interns = GetAllInterviews.new(App.config).call_issmodule(iss_m)
-              iss_m=ISSModule.transform(iss_m)
+              iss_m = ISSModule.transform(iss_m)
               interns
             end
           interviews = Interviews.new(interview_list)

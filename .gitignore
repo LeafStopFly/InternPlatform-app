@@ -1,3 +1,5 @@
 _*
 config/secrets.yml
 .DS_Store
+coverage/*
+!coverage/resultset.yml
